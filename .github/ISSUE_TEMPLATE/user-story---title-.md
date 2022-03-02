@@ -7,4 +7,4 @@ assignees: ''
 
 ---
 
-As a **type of user** I want to **action** so that I **goal**.
+As a **role** I want to **objective** so that I **benefit**.
