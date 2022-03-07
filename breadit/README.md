@@ -27,3 +27,30 @@
 22. As a registered user I want to be able to edit my own comments so that I can correct mistakes easily.
 23. As a registered user I want to be able to remove my own comments so that I don't have to leave them on the site if I change my mind.
 24. As a site admin I want to be able to access the admin page so that I can monitor posts and comments and remove them if they are inappropriate.
+
+## Features 
+
+### Existing features
+<!-- Work in progress -->
+<!-- optional: features left to implement -->
+
+## Technologies used
+
+Hosting: Heroku
+Version Control: Git, GitHub
+Languages: Python
+
+## Testing
+
+## Deployment
+
+The site was deployed to Heroku by connecting it go my GitHub repository and enabling automatic deploys.
+The steps I followed to deploy the site on Heroku can be found here: https://devcenter.heroku.com/articles/getting-started-with-python#set-up.
+
+
+## Credits
+
+### Content
+
+### Media
+
