@@ -39,6 +39,8 @@
 Hosting: Heroku
 Version Control: Git, GitHub
 Languages: Python
+For hosting media files: Cloudinary
+Database: PostgreSQL
 
 ## Testing
 
@@ -49,6 +51,8 @@ The steps I followed to deploy the site on Heroku can be found here: https://dev
 
 
 ## Credits
+
+This tutorial series helped me a lot for writing my tests: https://www.youtube.com/watch?v=0MrgsYswT1c&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=2
 
 ### Content
 
