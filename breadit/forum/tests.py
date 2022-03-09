@@ -4,5 +4,4 @@ from .models import Post
 
 # Create your tests here.
 
-class TestPostModel(django.test.TestCase):
-    
+# class TestPostModel(django.test.TestCase):
