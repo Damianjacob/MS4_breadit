@@ -3,17 +3,30 @@
 {% block content %}
 
 <!-- Blog posts -->
-<h1>This is where my posts should go</h1>
-<div class="container">
-  <div class="row">
+<div class="container mt-2 bg-posts overflow-hidden">
+  <div class="row gx-3 gy-3">
+    
     {% for post in post_list %}
     <div class="container col-lg-6 col-xs-12 border rounded">
-      <h3>{{post.title}}</h3>
-      <span>by {{ post.author }}</span>
+      <div class="d-flex justify-content-between">
+        <h3 class="d-inline-block">{{post.title}}</h3>
+        <span>Posted on {{ post.created_on | date:'F d Y' }}</span>
+      </div>
+      <div>by {{ post.author }}</div>
+      <hr>
       <div class="row">
+        {% if post.image %}
         <div class="col-lg-4">
-
+          <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="">
         </div>
+        <div class="col-lg-8">
+          {{ post.content|truncatechars:300 }}
+        </div>
+        {% else %}
+        <div class="col-lg-12">
+          {{ post.content|truncatechars:500 }}
+        </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}

@@ -1,6 +1,12 @@
-/* .zindex-dropdown{
-    z-index: 1000;
-} */
-body{
-    background-color: red;
+:root{
+    --gold: #f2e6c8;
+    --brown: #63321a;
+}
+
+.bg-navbar{
+    background-color: var(--brown);
+}
+
+.bg-posts{
+    background-color: var(--gold);
 }
