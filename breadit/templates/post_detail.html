@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Testing post detail view</h1>
-{{ post.slug}}
-{{ slug }}
+<div class="container">
+  <div class="">
+    <h2 class="text-center">{{post.title}}</h2>
+    <div class="text-center"><i class="fa-solid fa-user"></i> {{ post.author }}</div>
+    <div class="text-center"><i class="fa-solid fa-calendar-day"></i> {{ post.created_on | date:'F d Y' }}</div>
+    <!-- <span>Latest Edit: {{ post.modified_on | date:'F d Y' }}</span> -->
+    <hr>
+    <div class="row">
+      {% if post.image %}
+        <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="">
+
+      {% endif %}
+      <div>
+        {{ post.content }}
+      </div>
+    </div>
+  </div>
+  <i class="fa-solid fa-bread-slice"></i>
+  <span>{{ post.number_of_likes}}</span>
+  <i class="fa-solid fa-comment"></i>
+  <!-- Insert number of comments here after creating comment model -->
+</div>
+
 {% endblock %}
