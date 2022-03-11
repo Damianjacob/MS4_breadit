@@ -2,12 +2,13 @@
 
 {% block content %}
 
+
 <!-- Blog posts -->
 <div class="container mt-2 overflow-hidden">
   <div class="row gy-2">
     {% for post in post_list %}
     <div class="container col-lg-6 col-xs-12">
-      <div class="my-2 p-1 bg-posts border rounded">
+      <div class="my-2 p-1 custom-posts border rounded">
         <div class="d-flex justify-content-between">
           <h3 class="d-inline-block">{{post.title}}</h3>
           <span>Posted on {{ post.created_on | date:'F d Y' }}</span>
@@ -16,21 +17,30 @@
         <hr>
         <div class="row">
           {% if post.image %}
-          <div class="col-lg-4">
+          <div class="col-4">
             <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="">
           </div>
-          <div class="col-lg-8">
-            {{ post.content|truncatechars:300 }}
+          <div class="col-8">
+            {{ post.content|truncatechars:200 }}
           </div>
           {% else %}
           <div class="col-lg-12">
-            {{ post.content|truncatechars:500 }}
+            {{ post.content|truncatechars:400 }}
           </div>
           {% endif %}
         </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-dark">View Post</button>
+        </div>
+
       </div>
+      <i class="fa-solid fa-bread-slice"></i>
+      <span>{{ post.number_of_likes}}</span>
+      <i class="fa-solid fa-comment"></i>
+      <!-- Insert number of comments here after creating comment model -->
     </div>
     {% endfor %}
   </div>
 </div>
+
 {% endblock %}

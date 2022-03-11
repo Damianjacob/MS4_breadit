@@ -3,10 +3,10 @@
     --brown: #63321a;
 }
 
-.bg-navbar{
+.bg-custom-brown{
     background-color: var(--brown);
 }
 
-.bg-posts{
+.custom-posts{
     background-color: var(--gold);
 }
