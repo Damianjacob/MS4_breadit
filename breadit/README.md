@@ -57,7 +57,8 @@ The steps I followed to deploy the site on Heroku can be found here: https://dev
 Writing tests: https://www.youtube.com/watch?v=0MrgsYswT1c&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=2
 Slugs in django: https://learndjango.com/tutorials/django-slug-tutorial
 CloudinaryField for videos: https://github.com/cloudinary/pycloudinary/issues/63
-Stackoverflow question on where to insert the script tag: https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup
+
+I have used the Django Tutorial and Django documentation extensively during the creation of this project.
 
 ### Content
 

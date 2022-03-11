@@ -8,7 +8,7 @@ from cloudinary.models import CloudinaryField
 
 class Post(models.Model):
     title = models.CharField(max_length=150)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(null=False, unique=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     image = CloudinaryField('image', blank=True, null=True)

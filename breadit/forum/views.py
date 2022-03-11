@@ -10,7 +10,7 @@ from .models import Post
 #     context = {'post_list': post_list}
 #     return render(request, 'index.html', context)
 
-# Creating the class based view for index
+# Class-based view for the index page (which contains the posts)
 class PostView(ListView):
     model = Post
     queryset = Post.objects.order_by('-created_on')
