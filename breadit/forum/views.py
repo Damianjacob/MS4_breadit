@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, Comment
 
 # Create your views here.
 
@@ -23,9 +23,11 @@ class PostDetailView(DetailView):
 
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
+        comments = post.comments.order_by('created_on')
         return render(request, 'post_detail.html', {
             'post': post,
             'slug': slug,
+            'comments': comments
         })
 
     template_name = 'post_detail.html'

@@ -26,7 +26,7 @@ class Post(models.Model):
     class Meta:
         ordering = ['-created_on']
 
-    # The following code has been copied and adapted from this article:
+    # The following two methods have been copied and adapted from this article:
     # https://learndjango.com/tutorials/django-slug-tutorial
     # Consider using following method if time allows
     # https://docs.djangoproject.com/en/dev/ref/forms/validation/#validating-fields-with-clean
