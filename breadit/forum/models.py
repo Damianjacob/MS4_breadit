@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 # Create your models here.
 
@@ -25,6 +26,14 @@ class Post(models.Model):
     
     class Meta:
         ordering = ['-created_on']
+
+    # The following code has been copied and adapted from this article:
+    # https://learndjango.com/tutorials/django-slug-tutorial
+    # Consider using following method if time allows
+    # https://docs.djangoproject.com/en/dev/ref/forms/validation/#validating-fields-with-clean
+
+    def get_absolute_url(self):
+        return reverse('post_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.slug:
