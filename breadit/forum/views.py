@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
@@ -36,6 +36,11 @@ class PostDetailView(DetailView):
 
     template_name = 'post_detail.html'
 
+
+class CreatePost(LoginRequiredMixin, TemplateView):
+    login_url = '/accounts/login/'
+    redirect_field_name = 'create_post'
+    template_name = 'create_post.html'
 
 class MyProfileView(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'
