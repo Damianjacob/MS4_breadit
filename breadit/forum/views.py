@@ -1,8 +1,12 @@
 from django.shortcuts import get_object_or_404, render
+from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from .models import Post, Comment
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -31,3 +35,9 @@ class PostDetailView(DetailView):
         })
 
     template_name = 'post_detail.html'
+
+
+class MyProfileView(LoginRequiredMixin, TemplateView):
+    login_url = '/accounts/login/'
+    redirect_field_name = 'profile'
+    template_name = 'profile.html'
