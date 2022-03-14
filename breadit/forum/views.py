@@ -39,7 +39,6 @@ class PostDetailView(DetailView):
 
 class CreatePost(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'
-    redirect_field_name = 'create_post'
     template_name = 'create_post.html'
 
 class MyProfileView(LoginRequiredMixin, TemplateView):
