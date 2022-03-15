@@ -42,7 +42,7 @@ class PostDetailView(DetailView):
 
 class CreatePostView(LoginRequiredMixin, CreateView):
     login_url = '/accounts/login/'
-    template_name = 'create_post.html'
+    template_name = 'create_post_form.html'
     form_class = PostForm
     model = Post
 
@@ -54,11 +54,11 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     def form_invalid(self, form):
         return super().form_invalid(form)
 
-    def get_success_url(self):
-        messages.success(self.request, 'Your Post is now online')
-        return reverse(
-            'index'
-        )
+    # def get_success_url(self):
+    #     messages.success(self.request, 'Your Post is now online')
+    #     return reverse(
+    #         'index'
+    #     )
 
 
 
