@@ -14,6 +14,9 @@ from pathlib import Path
 import django_heroku
 import os
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 if os.path.isfile("env.py"):
     import env
@@ -146,3 +149,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku
 django_heroku.settings(locals())
+
+cloudinary.config(
+    cloud_name = "CLOUDINARY_CLOUD_NAME",
+    api_key = "CLOUDINARY_API_KEY",
+    api_secret = "CLOUDINARY_API_SECRET"
+)

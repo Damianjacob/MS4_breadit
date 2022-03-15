@@ -48,17 +48,12 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.instance.image = self.request.post_file
         form.save()
         return super().form_valid(form)
 
     def form_invalid(self, form):
         return super().form_invalid(form)
-
-    # def get_success_url(self):
-    #     messages.success(self.request, 'Your Post is now online')
-    #     return reverse(
-    #         'index'
-    #     )
 
 
 
