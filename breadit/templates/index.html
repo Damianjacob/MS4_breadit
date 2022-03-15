@@ -31,7 +31,7 @@
           {% endif %}
         </div>
         <div class="text-center">
-          <a href="{% url 'post_detail' post.slug %}" class="link-dark">View Post</a>
+          <a href="{% url 'post_detail' post.slug post.id %}" class="link-dark">View Post</a>
         </div>
       </div>
       <i class="fa-solid fa-bread-slice"></i>

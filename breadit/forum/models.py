@@ -32,7 +32,10 @@ class Post(models.Model):
     # https://docs.djangoproject.com/en/dev/ref/forms/validation/#validating-fields-with-clean
 
     def get_absolute_url(self):
-        return reverse('post_detail', kwargs={'slug': self.slug})
+        return reverse('post_detail', kwargs={
+                'slug': self.slug,
+                'id': self.id
+            })
 
     def save(self, *args, **kwargs):
         if not self.slug:
