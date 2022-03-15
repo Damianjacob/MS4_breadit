@@ -1,11 +1,14 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.views import View
+from django.contrib import messages
 from django.views.generic import ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from .models import Post, Comment
+from .forms import PostForm
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -38,9 +41,33 @@ class PostDetailView(DetailView):
     template_name = 'post_detail.html'
 
 
-class CreatePost(LoginRequiredMixin, TemplateView):
+class CreatePostView(LoginRequiredMixin, CreateView):
     login_url = '/accounts/login/'
     template_name = 'create_post.html'
+    form_class = PostForm
+    model = Post
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.save()
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return super().form_invalid(form)
+
+    def get_success_url(self):
+        messages.success(self.request, 'Your Post is now online')
+        return reverse(
+            'index'
+        )
+
+
+
+class UpdatePostView(LoginRequiredMixin, UpdateView):
+    login_url = '/accounts/login/'
+    model = Post
+
+
 
 class MyProfileView(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'
