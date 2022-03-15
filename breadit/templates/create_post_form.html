@@ -4,7 +4,7 @@
 
 <h1>This is the page for creating a post</h1>
 
-<form class="m-2" action="" method="post">
+<form class="m-2" action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
       <label for="post_title">Title</label>
