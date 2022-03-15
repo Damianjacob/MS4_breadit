@@ -3,6 +3,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+import uuid
 
 # Create your models here.
 
@@ -16,6 +17,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
+    uuid = uuid.uuid4()
 
     def __str__(self):
         return self.title
@@ -33,13 +35,13 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={
-                'slug': self.slug,
-                'id': self.id
+                'slug': self.slug
             })
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)
+            title_and_uuid = self.slug + ' ' + str(self.uuid)
+            self.slug = slugify(title_and_uuid)
         return super().save(*args, **kwargs)
 
 class Comment(models.Model):

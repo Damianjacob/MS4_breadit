@@ -28,14 +28,13 @@ class PostView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
-    def get(self, request, slug, id):
+    def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('created_on')
         return render(request, 'post_detail.html', {
             'post': post,
             'slug': slug,
             'comments': comments,
-            'id': id
         })
 
     template_name = 'post_detail.html'
