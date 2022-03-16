@@ -1,3 +1,5 @@
+from re import template
+from turtle import update
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.views.generic import ListView
@@ -59,9 +61,34 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
     login_url = '/accounts/login/'
+    form_class = PostForm
     model = Post
+    template_name = 'update_post_form'
 
+    def get(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        return render(request, 'update_post_form.html', {
+            'post': post,
+            'slug': slug
+        })
+    
+    # def post(self, request, slug):
+    #     post = get_object_or_404(Post, slug=slug)
+    #     post_form = PostForm(data=request.POST)
 
+    #     if post_form.is_valid():
+    #         post_form.instance.title = self.request.title
+    #         post_form.instance.content = self.request.title
+    #         if request.FILES['']
+
+    def form_valid(self, form):
+        # post = get_object_or_404(Post, self.request.GET)
+        # if self.request.FILES['post_file'] != '':
+        #     form.instance.image = self.request.FILES['post_file']
+        #     form.save(update_fields=['image'])
+        # form.instance.image = self.request.FILES['post_file']
+        form.save(updated_fields=['title', 'content'])
+        return super().form_valid(form)
 
 class MyProfileView(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'

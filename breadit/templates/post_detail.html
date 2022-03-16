@@ -10,7 +10,7 @@
     <hr>
     <div class="row">
       {% if post.image %}
-        <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
+      <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
 
       {% endif %}
       <div>
@@ -19,22 +19,27 @@
     </div>
   </div>
   <div>
-
     {% if post.author|stringformat:"s" == user.username|stringformat:"s" %}
     <div class="d-inline-flex w-100">
       <span class="me-auto">
         <i class="fa-solid fa-bread-slice"></i>
         {{ post.number_of_likes}}
         <i class="fa-solid fa-comment"></i>
-        {{ comments|length }}    
+        {{ comments|length }}
       </span>
-      <a href="#" aria-label="Edit Post" class="mx-1"><i class="fa-solid fa-pen fa-xl"></i></a>
+      <a href="{% url 'update_post' post.slug %}" aria-label="Edit Post" class="mx-1"><i class="fa-solid fa-pen fa-xl"></i></a>
       <a href="#" aria-label="Delete Post" class="mx-1"><i class="fa-solid fa-xmark fa-2xl rediconcolor"></i></a>
     </div>
+
+    {% else %}
+    <span class="me-auto">
+      <i class="fa-solid fa-bread-slice"></i>
+      {{ post.number_of_likes}}
+      <i class="fa-solid fa-comment"></i>
+      {{ comments|length }}
+    </span>
     {% endif %}
   </div>
-
-
 </div>
 
 
@@ -42,10 +47,12 @@
 {% for comment in comments %}
 <div class="card m-5 shadow">
   <div class="card-body">
-    <h5 class="card-title"><i class="fa-solid fa-user"></i> {{ comment.author }}</div></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-calendar-day"></i> {{ comment.created_on | date:'F d Y' }}</h6>
-    <p class="card-text">{{comment.content}}</p>
+    <h5 class="card-title"><i class="fa-solid fa-user"></i> {{ comment.author }}
   </div>
+  </h5>
+  <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-calendar-day"></i> {{ comment.created_on | date:'F d  Y' }}</h6>
+  <p class="card-text">{{comment.content}}</p>
+</div>
 </div>
 
 {% endfor %}
