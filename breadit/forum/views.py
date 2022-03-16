@@ -1,5 +1,3 @@
-from re import template
-from turtle import update
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.views.generic import ListView
