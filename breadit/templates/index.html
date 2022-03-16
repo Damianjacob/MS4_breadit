@@ -6,38 +6,42 @@
 <!-- Blog posts -->
 <div class="container mt-2 overflow-hidden">
   <div class="row gy-2">
-    <a href="{% url 'create_post' %}" class="link-dark text-center"><i class="fa-solid fa-circle-plus fa-xl"></i> Add Post</a>
+    <a href="{% url 'create_post' %}" class="link-dark text-center"><i class="fa-solid fa-circle-plus fa-xl"></i> Add
+      Post</a>
     {% for post in post_list %}
     <div class="container col-lg-6 col-xs-12">
-      <div class="my-2 p-1 custom-posts border rounded shadow">
-        <div class="d-flex justify-content-between">
-          <h3 class="d-inline-block">{{post.title}}</h3>
-          <span>Posted on {{ post.created_on | date:'F d Y' }}</span>
-        </div>
-        <div>by {{ post.author }}</div>
-        <hr>
-        <div class="row">
-          {% if post.image %}
-          <div class="col-4">
-            <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="">
+        <div class="my-2 p-1 custom-posts border rounded shadow">
+          <div class="d-flex justify-content-between">
+            <h3 class="d-inline-block">{{post.title}}</h3>
+            <span>Posted on {{ post.created_on | date:'F d Y' }}</span>
           </div>
-          <div class="col-8">
-            {{ post.content|truncatechars:200 }}
+          <div>by {{ post.author }}</div>
+          <hr>
+          <div class="row">
+            {% if post.image %}
+            <div class="col-4">
+              <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="">
+            </div>
+            <div class="col-8">
+              {{ post.content|truncatechars:200 }}
+            </div>
+            {% else %}
+            <div class="col-lg-12">
+              {{ post.content|truncatechars:400 }}
+            </div>
+            {% endif %}
           </div>
-          {% else %}
-          <div class="col-lg-12">
-            {{ post.content|truncatechars:400 }}
+          <div class="text-center">
+            <a href="{% url 'post_detail' post.slug %}" class="link-dark">View Post</a>
           </div>
-          {% endif %}
         </div>
-        <div class="text-center">
-          <a href="{% url 'post_detail' post.slug %}" class="link-dark">View Post</a>
-        </div>
+      <div>
+        <i class="fa-solid fa-bread-slice"></i>
+        <span>{{ post.number_of_likes}}</span>
+        <i class="fa-solid fa-comment"></i>
+        <span>{{ post.number_of_comments }}</span>
       </div>
-      <i class="fa-solid fa-bread-slice"></i>
-      <span>{{ post.number_of_likes}}</span>
-      <i class="fa-solid fa-comment"></i>
-      <!-- Insert number of comments here after creating comment model -->
+
     </div>
     {% endfor %}
   </div>

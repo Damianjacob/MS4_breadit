@@ -5,6 +5,8 @@
   <div class="">
     <h2 class="text-center">{{post.title}}</h2>
     {% if post.author|stringformat:"s" == user.username|stringformat:"s" %}
+    <a href="#" aria-label="Edit Post"><i class="fa-solid fa-pen fa-xl"></i></a>
+    <a href="#" aria-label="Delete Post"><i class="fa-solid fa-xmark fa-2xl rediconcolor"></i></a>
     {% endif %}
     <div class="text-center"><i class="fa-solid fa-user"></i> {{ post.author }}</div>
     <div class="text-center"><i class="fa-solid fa-calendar-day"></i> {{ post.created_on | date:'F d Y' }}</div>
@@ -12,7 +14,7 @@
     <hr>
     <div class="row">
       {% if post.image %}
-        <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="">
+        <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
 
       {% endif %}
       <div>
