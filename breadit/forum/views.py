@@ -1,3 +1,4 @@
+from genericpath import exists
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.views.generic import ListView
@@ -7,7 +8,7 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from .models import Post, Comment
-from .forms import PostForm
+from .forms import PostForm, EditPostform
 from django.urls import reverse
 from django.contrib.auth.models import User
 
@@ -27,6 +28,7 @@ class PostView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+    template_name = 'post_detail.html'
 
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -37,7 +39,7 @@ class PostDetailView(DetailView):
             'comments': comments,
         })
 
-    template_name = 'post_detail.html'
+
 
 
 class CreatePostView(LoginRequiredMixin, CreateView):
@@ -48,7 +50,11 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.image = self.request.FILES['post_file']
+        # form.instance.image = self.request.FILES['post_file']
+        files = self.request.FILES
+        if 'post_file' in files:
+            form.instance.image = files['post_file']
+
         form.save()
         return super().form_valid(form)
 
@@ -59,7 +65,8 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
     login_url = '/accounts/login/'
-    form_class = PostForm
+    # form_class = PostForm
+    form_class = EditPostform
     model = Post
     template_name = 'update_post_form'
 
@@ -85,7 +92,10 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
         #     form.instance.image = self.request.FILES['post_file']
         #     form.save(update_fields=['image'])
         # form.instance.image = self.request.FILES['post_file']
-        form.save(updated_fields=['title', 'content'])
+        files = self.request.FILES
+        if 'post_file' in files:
+            form.instance.image = files['post_file']
+        form.save()
         return super().form_valid(form)
 
 class MyProfileView(LoginRequiredMixin, TemplateView):

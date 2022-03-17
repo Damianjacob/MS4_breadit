@@ -5,3 +5,10 @@ class PostForm(ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'content', 'image', 'video']
+
+
+class EditPostform(ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'content']
+
