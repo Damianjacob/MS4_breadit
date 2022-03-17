@@ -59,6 +59,10 @@ Slugs in django: https://learndjango.com/tutorials/django-slug-tutorial
 CloudinaryField for videos: https://github.com/cloudinary/pycloudinary/issues/63
 post.user and user.username not being equal: https://stackoverflow.com/questions/60955686/the-if-equal-not-working-in-django-template
 
+How to display a message for DeleteView: https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+
+Tutorial for adding a sign up view: https://learndjango.com/tutorials/django-signup-tutorial
+
 I have used the Django Tutorial and Django documentation extensively during the creation of this project.
 
 ### Content

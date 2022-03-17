@@ -51,10 +51,12 @@ class CreatePostView(LoginRequiredMixin, CreateView):
             form.instance.image = files['post_file']
 
         form.save()
+        messages.success(self.request, 'Your post has been created succesfully!')
         return super().form_valid(form)
 
     def form_invalid(self, form):
         return super().form_invalid(form)
+
 
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
@@ -78,6 +80,7 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
         if 'post_file' in files:
             form.instance.image = files['post_file']
         form.save()
+        messages.success(self.request, 'Your post has been updated succesfully!')
         return super().form_valid(form)
 
 class DeletePostView(LoginRequiredMixin, DeleteView):
@@ -85,7 +88,11 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = "post_confirm_delete.html"
     success_url = '/'
-
+    success_message = "Your post has been deleted succesfully!"
+    
+    def delete(self, request, slug):
+        messages.success(self.request, self.success_message)
+        return super(DeletePostView, self).delete(request, slug)
 
 class MyProfileView(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'
