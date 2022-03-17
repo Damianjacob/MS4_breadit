@@ -1,4 +1,3 @@
-from genericpath import exists
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.views.generic import ListView
@@ -9,7 +8,7 @@ from django.http import HttpResponse
 from .models import Post, Comment
 from .forms import PostForm, EditPostform
 from django.urls import reverse
-from django.contrib.auth.models import User
+
 
 # Create your views here.
 
