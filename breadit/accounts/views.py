@@ -16,9 +16,9 @@ class SignUpView(SuccessMessageMixin, generic.CreateView):
     template_name = 'registration/signup.html'
     success_message = "Your account has been created successfully, %(username)s! You can now log in."
 
-class ProfileView(LoginRequiredMixin, TemplateView):
-    login_url = '/accounts/login/'
-    template_name = 'registration/profile.html'
+# class ProfileView(LoginRequiredMixin, TemplateView):
+#     login_url = '/accounts/login/'
+#     template_name = 'registration/profile.html'
 
 
 class MyAccountView(LoginRequiredMixin, TemplateView):

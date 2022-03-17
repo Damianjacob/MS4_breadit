@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+{% load crispy_forms_tags %}
+
 <div class="container">
   <div class="">
     <h2 class="text-center">{{post.title}}</h2>
@@ -44,6 +47,17 @@
   </div>
 </div>
 
+{% if user.is_authenticated %}
+
+<h3>Leave a Comment: </h3>
+
+<form method="POST">
+{{ comment_form | crispy }}
+{% csrf_token %}
+<button type="submit" class="btn btn-signup btn-lg">Submit</button>
+</form>
+
+{% endif %}
 
 <!-- Comments section -->
 {% for comment in comments %}

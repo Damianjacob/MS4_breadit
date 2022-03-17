@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
@@ -7,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from .models import Post, Comment
-from .forms import PostForm, EditPostform
+from .forms import PostForm, EditPostform, CommentForm
 from django.urls import reverse
 
 
@@ -28,10 +29,33 @@ class PostDetailView(DetailView):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('created_on')
+
         return render(request, 'post_detail.html', {
             'post': post,
             'slug': slug,
             'comments': comments,
+            'comment_form': CommentForm()
+        })
+
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        comments = post.comments.order_by('created_on')
+
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.author = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(request, 'post_detail.html', {
+            'post': post,
+            'slug': slug,
+            'comments': comments,
+            'comment_form': CommentForm()
         })
 
 # Class-based view for the creation of posts, limited to logged-in users
