@@ -19,6 +19,8 @@
     </div>
   </div>
   <div>
+    <!-- The "Edit" and "Delete" icons will only appear for the person
+    who created the post -->
     {% if post.author|stringformat:"s" == user.username|stringformat:"s" %}
     <div class="d-inline-flex w-100">
       <span class="me-auto">
@@ -28,7 +30,7 @@
         {{ comments|length }}
       </span>
       <a href="{% url 'update_post' post.slug %}" aria-label="Edit Post" class="mx-1"><i class="fa-solid fa-pen fa-xl"></i></a>
-      <a href="#" aria-label="Delete Post" class="mx-1"><i class="fa-solid fa-xmark fa-2xl rediconcolor"></i></a>
+      <a href="{% url 'delete_post' post.slug %}" aria-label="Delete Post" class="mx-1"><i class="fa-solid fa-xmark fa-2xl rediconcolor"></i></a>
     </div>
 
     {% else %}

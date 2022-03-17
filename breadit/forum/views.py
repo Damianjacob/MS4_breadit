@@ -14,10 +14,6 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
-# def index(request):
-#     post_list = Post.objects.order_by('-created_on')
-#     context = {'post_list': post_list}
-#     return render(request, 'index.html', context)
 
 # Class-based view for the index page (which contains the posts)
 class PostView(ListView):
@@ -39,9 +35,7 @@ class PostDetailView(DetailView):
             'comments': comments,
         })
 
-
-
-
+# Class-based view for the creation of posts, limited to logged-in users
 class CreatePostView(LoginRequiredMixin, CreateView):
     login_url = '/accounts/login/'
     template_name = 'create_post_form.html'
@@ -50,8 +44,9 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        # form.instance.image = self.request.FILES['post_file']
         files = self.request.FILES
+        # The following if statement checks if any new image was submitted,
+        # and only tries to save that image  if that's the case.
         if 'post_file' in files:
             form.instance.image = files['post_file']
 
@@ -60,7 +55,6 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
     def form_invalid(self, form):
         return super().form_invalid(form)
-
 
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
@@ -76,27 +70,22 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
             'post': post,
             'slug': slug
         })
-    
-    # def post(self, request, slug):
-    #     post = get_object_or_404(Post, slug=slug)
-    #     post_form = PostForm(data=request.POST)
-
-    #     if post_form.is_valid():
-    #         post_form.instance.title = self.request.title
-    #         post_form.instance.content = self.request.title
-    #         if request.FILES['']
 
     def form_valid(self, form):
-        # post = get_object_or_404(Post, self.request.GET)
-        # if self.request.FILES['post_file'] != '':
-        #     form.instance.image = self.request.FILES['post_file']
-        #     form.save(update_fields=['image'])
-        # form.instance.image = self.request.FILES['post_file']
         files = self.request.FILES
+        # The following if statement checks if any new image was submitted,
+        # and only tries to save a new image if that's the case.
         if 'post_file' in files:
             form.instance.image = files['post_file']
         form.save()
         return super().form_valid(form)
+
+class DeletePostView(LoginRequiredMixin, DeleteView):
+    login_url = '/accounts/login/'
+    model = Post
+    template_name = "post_confirm_delete.html"
+    success_url = '/'
+
 
 class MyProfileView(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'
