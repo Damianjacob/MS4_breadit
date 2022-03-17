@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from .models import Post, Comment
 from .forms import PostForm, EditPostform
@@ -66,10 +67,14 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
 
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
-        return render(request, 'update_post_form.html', {
-            'post': post,
-            'slug': slug
-        })
+        user = request.user
+        if str(user.username) != str(post.author):
+            raise PermissionDenied
+        else:
+            return render(request, 'update_post_form.html', {
+                'post': post,
+                'slug': slug
+            })
 
     def form_valid(self, form):
         files = self.request.FILES

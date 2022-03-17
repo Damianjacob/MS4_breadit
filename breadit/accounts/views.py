@@ -16,22 +16,18 @@ class SignUpView(SuccessMessageMixin, generic.CreateView):
     template_name = 'registration/signup.html'
     success_message = "Your account has been created successfully, %(username)s! You can now log in."
 
-class MyProfileView(LoginRequiredMixin, TemplateView):
+class ProfileView(LoginRequiredMixin, TemplateView):
     login_url = '/accounts/login/'
     template_name = 'registration/profile.html'
 
-    # def get(self, request, username):
-    #     user = get_object_or_404(User, username=username)
-    #     return render(request, 'registration/profile.html', {
-    #         'username': user.username
-    #     })
+
+class MyAccountView(LoginRequiredMixin, TemplateView):
+    login_url = '/accounts/login/'
+    template_name = 'registration/user_account.html'
 
     
     def get(self, request, username):
         user = request.user
-        # user = get_object_or_404(User, username=username)
-        # The following statement denies access to another user's profile if someone
-        # should try to access it through url manipulation
         if user.username != username:
             raise PermissionDenied
         else:
