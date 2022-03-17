@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
-from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from .models import Post, Comment
@@ -94,7 +93,4 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
         messages.success(self.request, self.success_message)
         return super(DeletePostView, self).delete(request, slug)
 
-class MyProfileView(LoginRequiredMixin, TemplateView):
-    login_url = '/accounts/login/'
-    redirect_field_name = 'profile'
-    template_name = 'profile.html'
+
