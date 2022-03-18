@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.core.validators import FileExtensionValidator
 from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
@@ -12,8 +13,8 @@ class Post(models.Model):
     slug = models.SlugField(null=False, unique=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    image = CloudinaryField('image', blank=True, null=True)
-    video = CloudinaryField(resource_type='video', blank=True, null=True)
+    image = CloudinaryField('image', blank=True, null=True,
+    validators=[FileExtensionValidator(['jpeg', 'png', 'webp'])])
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)

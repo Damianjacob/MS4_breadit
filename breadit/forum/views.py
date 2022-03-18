@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, reverse, render
 from django.contrib import messages
+from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
 from django.views import View
 from django.views.generic import ListView
@@ -84,6 +85,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         files = self.request.FILES
+
         # The following if statement checks if any new image was submitted,
         # and only tries to save that image  if that's the case.
         if 'post_file' in files:
