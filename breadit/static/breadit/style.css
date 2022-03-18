@@ -14,3 +14,11 @@
 .rediconcolor{
     color: red;
 }
+
+.brown-icon-color{
+    color: var(--brown);
+}
+
+.gold-icon-color{
+    color: var(--gold);
+}

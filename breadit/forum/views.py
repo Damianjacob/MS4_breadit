@@ -1,12 +1,13 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, reverse, render
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.views import View
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import PostForm, EditPostform, CommentForm
 from django.urls import reverse
@@ -29,6 +30,9 @@ class PostDetailView(DetailView):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('created_on')
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
         return render(request, 'post_detail.html', {
             'post': post,
@@ -57,6 +61,18 @@ class PostDetailView(DetailView):
             'comments': comments,
             'comment_form': CommentForm()
         })
+
+class PostLike(View):
+    
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 # Class-based view for the creation of posts, limited to logged-in users
 class CreatePostView(LoginRequiredMixin, CreateView):

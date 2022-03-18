@@ -32,17 +32,34 @@
         <i class="fa-solid fa-comment"></i>
         {{ comments|length }}
       </span>
-      <a href="{% url 'update_post' post.slug %}" aria-label="Edit Post" class="mx-1"><i class="fa-solid fa-pen fa-xl"></i></a>
-      <a href="{% url 'delete_post' post.slug %}" aria-label="Delete Post" class="mx-1"><i class="fa-solid fa-xmark fa-2xl rediconcolor"></i></a>
+      <a href="{% url 'update_post' post.slug %}" aria-label="Edit Post" class="mx-1"><i
+          class="fa-solid fa-pen fa-xl"></i></a>
+      <a href="{% url 'delete_post' post.slug %}" aria-label="Delete Post" class="mx-1"><i
+          class="fa-solid fa-xmark fa-2xl rediconcolor"></i></a>
     </div>
 
     {% else %}
     <span class="me-auto">
+
+      {% if user.is_authenticated %}
+      <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+        {% csrf_token %}
+        {% if liked %}
+        <button type="submit" name="" value="{{post.slug}}" class="btn-like">
+          <i class="fa-solid fa-bread-slice brown-icon-color"></i>
+          {% else %}
+          <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+            <i class="fa-solid fa-bread-slice gold-icon-color"></i>
+
+            {% endif %}
+      </form>
+      {% else %}
       <i class="fa-solid fa-bread-slice"></i>
       {{ post.number_of_likes}}
       <i class="fa-solid fa-comment"></i>
       {{ comments|length }}
     </span>
+    {% endif %}
     {% endif %}
   </div>
 </div>
@@ -52,9 +69,9 @@
 <h3>Leave a Comment: </h3>
 
 <form method="POST">
-{{ comment_form | crispy }}
-{% csrf_token %}
-<button type="submit" class="btn btn-signup btn-lg">Submit</button>
+  {{ comment_form | crispy }}
+  {% csrf_token %}
+  <button type="submit" class="btn btn-signup btn-lg">Submit</button>
 </form>
 
 {% endif %}
@@ -66,7 +83,8 @@
     <h5 class="card-title"><i class="fa-solid fa-user"></i> {{ comment.author }}
   </div>
   </h5>
-  <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-calendar-day"></i> {{ comment.created_on | date:'F d  Y' }}</h6>
+  <h6 class="card-subtitle mb-2 text-muted"><i class="fa-solid fa-calendar-day"></i> {{ comment.created_on | date:'F d
+    Y' }}</h6>
   <p class="card-text">{{comment.content}}</p>
 </div>
 </div>
