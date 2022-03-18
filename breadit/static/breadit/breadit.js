@@ -5,34 +5,27 @@ function fileValidation() {
     console.log(fileInput.value);
 
     let filePath = fileInput.value;
-    let allowedExtentions = ['.jpg', '.jpeg', '.png'];
+    let allowedExtensions = ['.jpg', '.jpeg', '.png'];
+    x = 0
+    for (extension in allowedExtensions) {
 
-    let allowed = true
-
-    // if (filePath.includes('.jpg')||(filePath.includes('.jpeg')||(filePath.includes('.png')){
-    //     console.log('allowed!')
-    // }
-    // else{
-    //     console.log('not allowed')
-    // }
-    for (extension in allowedExtentions) {
-        
-        if (filePath.includes(extension)) { 
-            allowed = true;
-            break;
+        if (filePath.includes(allowedExtensions[extension])) {
+            x++;
+            console.log(`${filePath} contains ${allowedExtensions[extension]}, so x is now at ${x}`)
+            console.log(`the value of index ${extension} is ${allowedExtensions[extension]}`)
         }
-        else {
-            allowed = false
-        };
-        console.log(filePath)
-        console.log(allowed)
+        else {};
+        console.log(`${filePath} does not contain ${allowedExtensions[extension]}, so x is now at ${x}`)
     }
-    if (allowed == false) {
+    if (x < 1) {
         alert(
             'Your file does not have the correct format. Allowed formats: jpg, jpeg, png.'
         );
         fileInput.value = '';
     }
+    
 };
 
 console.log("Javascript is working");
+
+
