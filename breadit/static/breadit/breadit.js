@@ -1,4 +1,3 @@
-
 function fileValidation() {
     let fileInput = document.getElementById('post_file');
 

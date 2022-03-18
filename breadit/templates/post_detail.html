@@ -9,12 +9,10 @@
     <h2 class="text-center">{{post.title}}</h2>
     <div class="text-center"><i class="fa-solid fa-user"></i> {{ post.author }}</div>
     <div class="text-center"><i class="fa-solid fa-calendar-day"></i> {{ post.created_on | date:'F d Y' }}</div>
-    <!-- <span>Latest Edit: {{ post.modified_on | date:'F d Y' }}</span> -->
     <hr>
     <div class="row p-5">
       {% if post.image %}
       <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
-
       {% endif %}
       <div>
         {{ post.content }}
