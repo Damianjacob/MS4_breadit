@@ -17,8 +17,8 @@
 {% endif %}
 {% endif %}
 
-<div class="d-flex justify-content-center align-items center h-100">
-    <form method="post" action="{% url 'login' %}">
+<div class="d-flex justify-content-center mt-5">
+    <form method="post" action="{% url 'login' %}" class="custom-posts p-2 border rounded">
         {% csrf_token %}
         <table>
             <tr>
@@ -30,9 +30,11 @@
                 <td>{{ form.password }}</td>
             </tr>
         </table>
-    
-        <input type="submit" value="login">
-        <input type="hidden" name="next" value="{{ next }}">
+        <div class="text-center">
+            <input type="submit" value="login" class="btn-primary">
+            <input type="hidden" name="next" value="{{ next }}">
+        </div>
+
     </form>
 </div>
 

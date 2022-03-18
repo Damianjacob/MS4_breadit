@@ -30,6 +30,9 @@
 
 ## Features 
 
+Color palette:
+
+
 ### Existing features
 <!-- Work in progress -->
 <!-- optional: features left to implement -->
@@ -54,9 +57,7 @@ The steps I followed to deploy the site on Heroku can be found here: https://dev
 
 ### Tutorials and other resources
 
-Writing tests: https://www.youtube.com/watch?v=0MrgsYswT1c&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=2
 Slugs in django: https://learndjango.com/tutorials/django-slug-tutorial
-CloudinaryField for videos: https://github.com/cloudinary/pycloudinary/issues/63
 post.user and user.username not being equal: https://stackoverflow.com/questions/60955686/the-if-equal-not-working-in-django-template
 
 How to display a message for DeleteView: https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
