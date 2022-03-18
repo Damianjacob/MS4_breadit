@@ -4,10 +4,16 @@
     --blue: #7F95D1;
 }
 
-main{
+/* main{
     min-height: 100vh;
+} */
+
+.post-min-height{
+    min-height: 80%;
 }
 
+
+/* Custom color classes */
 .bg-custom-brown{
     background-color: var(--brown);
 }

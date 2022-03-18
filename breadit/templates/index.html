@@ -6,12 +6,13 @@
 <!-- Blog posts -->
 <div class="container mt-2 overflow-hidden">
   <div class="row gy-2">
-    <a href="{% url 'create_post' %}" class="text-decoration-none text-center blue-custom-color"><i
-        class="fa-solid fa-circle-plus fa-xl"></i> Add
+    <a href="{% url 'create_post' %}" class="text-decoration-none 
+    text-center blue-custom-color">
+      <i class="fa-solid fa-circle-plus fa-xl"></i> Add
       Post</a>
     {% for post in post_list %}
     <div class="container col-lg-6 col-xs-12">
-      <div class="my-2 p-1 custom-posts border rounded shadow">
+      <div class="my-2 p-1 custom-posts border rounded shadow post-min-height">
         <div class="d-flex justify-content-between">
           <h3 class="d-inline-block">{{post.title}}</h3>
           <span>Posted on {{ post.created_on | date:'F d Y' }}</span>
@@ -33,7 +34,8 @@
           {% endif %}
         </div>
         <div class="text-center">
-          <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none blue-custom-color">View Post</a>
+          <a href="{% url 'post_detail' post.slug %}" class="text-decoration-none 
+          blue-custom-color">View Post</a>
         </div>
       </div>
       <div>
