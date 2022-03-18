@@ -2,24 +2,21 @@
 
 {% block content %}
 
-<h1>This is the page for creating a post</h1>
+<h1 class="text-center">Create your post here</h1>
 
-<form class="m-2" action="" method="post" enctype="multipart/form-data">
+<form class="m-2 p-4 custom-posts border rounded" action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="form-group">
+    <div class="form-group mb-2">
       <label for="post_title">Title</label>
       <input type="text" class="form-control" id="post_title" placeholder="Title" name="title">
     </div>
-    <div class="form-group">
       <!-- content -->
-      <div class="form-group">
-        <label for="post_content">content</label>
+      <div class="form-group mb-2">
+        <label for="post_content">Content</label>
         <textarea class="form-control" id="post_content" rows="3" name="content"></textarea>
       </div>
-      </select>
-    </div>
-        <div class="form-group">
-          <label for="post_file">file input</label>
+        <div class="form-group mb-2">
+          <label for="post_file">You can upload a picture if you want (but you don't have to): </label>
           <input type="file" class="form-control-file" id="post_file" name="post_file">
         </div>
         <button type="submit" class="btn btn-primary mb-2">Create</button>
