@@ -1,7 +1,11 @@
 :root{
-    --gold: #f2e6c8;
-    --brown: #63321a;
-    --blue: #30C5FF;
+    --gold: #F7EAC9;
+    --brown: #A94C1E;
+    --blue: #7F95D1;
+}
+
+main{
+    min-height: 100vh;
 }
 
 .bg-custom-brown{
