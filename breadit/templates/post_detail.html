@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
-
-
 {% block content %}
 {% load crispy_forms_tags %}
-
+<!-- Post content -->
 <div class="container mt-5">
   <div class="custom-posts border rounded pt-1">
     <h2 class="text-center">{{post.title}}</h2>
@@ -20,8 +18,7 @@
     </div>
   </div>
   <div>
-    <!-- The "Edit" and "Delete" icons will only appear for the person
-    who created the post -->
+    <!-- Edit and delete icons (will appear only to person who created post) -->
     {% if post.author|stringformat:"s" == user.username|stringformat:"s" %}
     <div class="d-inline-flex w-100">
       <span class="me-auto">
@@ -37,8 +34,8 @@
     </div>
 
     {% else %}
+    <!-- Likes and comment icons for authenticated users -->
     <span class="me-auto">
-
       {% if user.is_authenticated %}
       <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
         {% csrf_token %}
@@ -54,10 +51,10 @@
         {{ post.number_of_likes}}
         <i class="fa-solid fa-comment"></i>
         {{ comments|length }}
-
         {% endif %}
       </form>
       {% else %}
+      <!-- Likes and comment icons for anonymous users -->
       <i class="fa-solid fa-bread-slice"></i>
       {{ post.number_of_likes}}
       <i class="fa-solid fa-comment"></i>
@@ -69,7 +66,7 @@
 </div>
 
 {% if user.is_authenticated %}
-
+<!-- Comment form for leaving comments -->
 <h3 class="text-center">Leave a Comment: </h3>
 <form method="POST" class="mx-2">
   {{ comment_form | crispy }}
@@ -77,18 +74,15 @@
   <div class="text-center">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
-
 </form>
 
 {% endif %}
-
 <!-- Comments section -->
 {% for comment in comments %}
 <div class="card m-5 shadow pb-1">
   <div class="card-body">
     <h5 class="card-title"><i class="fa-solid fa-user"></i> {{ comment.author }} </h5>
   </div>
-
   <h6 class="card-subtitle mb-2 text-muted px-2">
     <i class="fa-solid fa-calendar-day"></i>{{ comment.created_on | date:'F d Y' }}
   </h6>
