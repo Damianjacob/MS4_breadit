@@ -1,6 +1,7 @@
 :root{
     --gold: #f2e6c8;
     --brown: #63321a;
+    --blue: #30C5FF;
 }
 
 .bg-custom-brown{
@@ -11,14 +12,18 @@
     background-color: var(--gold);
 }
 
-.rediconcolor{
+.red-custom-color{
     color: red;
 }
 
-.brown-icon-color{
+.brown-custom-color{
     color: var(--brown);
 }
 
-.gold-icon-color{
+.gold-custom-color{
     color: var(--gold);
+}
+
+.blue-custom-color{
+    color: var(--blue);
 }
