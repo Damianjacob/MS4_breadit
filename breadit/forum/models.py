@@ -11,7 +11,7 @@ import uuid
 class Post(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(null=False, unique=True)
-    content = models.()
+    content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     image = CloudinaryField('image', blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
