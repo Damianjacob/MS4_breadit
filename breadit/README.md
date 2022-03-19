@@ -3,11 +3,27 @@
 ## A forum for bakers and bread enthusiasts
 
 ## Project Goals
+The goals for this project are:
+
+- Creating a forum where users can talk and discuss about baking
+- Users can sign up and log in to take advantage of the main features
+- Users can create, update and delete their posts. They can also engage with posts of other users by liking them and commenting.
+
+My own goals for this project are:
+- Creating a user-friendly and simple application
+- Improving my skills of web development, especially regarding frameworks(Django), back-end development and python.
+
 ## User Goals
+- Find information or recipes about baking
+- Discuss bakery-related things with other users
+- Share recipes, pictures or advice with other users
+
 ## Site Owner Goals
+- Keep the site friendly and secure by having access to the admin panel, where it's possible to delete posts, comments and users should it be necessary.
 
 ## User Stories
 
+### Epic 1: Basic functions
 1. As a user I want to see all the breadit posts on the main page so that I can scroll through them.
 2. As a user I want to click on a post that seems interesting to me so that I can see more details.
 3. As a user I want to see likes, user and number of comments of a post without first having to click on it so that I can decide which posts are most relevant to me.
