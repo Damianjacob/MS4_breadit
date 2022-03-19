@@ -224,10 +224,10 @@ Apart from the programming languages, I have used the following:
 - [Git](https://git-scm.com/) and [GitHub](https://github.com/) for version control and storage of my code 
 - [Cloudinary](https://cloudinary.com/) for hosting the image files
 - [postgreSQL](https://www.postgresql.org/) as a database
-- Balsamiq Wireframes for creating my wireframes
-- Lucidchart for creating the data schema for my models
-- Font Awesome - All icons are from Font Awesome
-- Google Fonts - I used the Roboto and Open Sans fonts from Google Fonts
+- [Balsamiq Wireframes](https://balsamiq.com/) for creating my wireframes
+- [Lucidchart](https://www.lucidchart.com/pages/de) for creating the data schema for my models
+- [Font Awesome](https://fontawesome.com/) - All icons are from Font Awesome
+- [Google Fonts](https://fonts.google.com/) - I used the Roboto and Open Sans fonts from Google Fonts
 
 
 ## Testing

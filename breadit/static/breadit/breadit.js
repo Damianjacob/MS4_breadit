@@ -38,16 +38,3 @@ let message = document.getElementById('custom-message-div')
 message.addEventListener("click", function () {
     message.style.display = 'none'
 })
-
-// function addLineBreaks(string) {
-//     return string.replace('\n', '<br>')
-// }
-
-// let post_content = document.getElementById('post_content')
-// let post_text = post_content.textContent
-// post_content.addEventListener('change', function () {
-//     newPostText = addLineBreaks(post_text)
-//     post_content.innerHTML = newPostText
-//     console.log('substituted newline with br tag')
-//     console.log(`${post_text}`)
-// })
