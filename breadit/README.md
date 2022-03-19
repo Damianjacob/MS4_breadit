@@ -53,17 +53,17 @@ My goal was to create a simple site with a clean look. I have opted for two warm
 I used balsamiq for the wireframes. The final wireframe is a bit different from the first version, as i made some changes while creating the project, in accordance with Agile principles.
 <details>
 <summary>Wireframes for mobile</summary>
-<img src='breadit/docs/wireframes/Mobile_wireframe.png' alt='mobile wireframe'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/wireframes/Mobile_wireframe.png' alt='mobile wireframe'>
 </details>
 
 <details>
 <summary>Wireframes for tablet</summary>
-<img src='breadit/docs/wireframes/Tablet_wireframe.png' alt='tablet wireframe'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/wireframes/Tablet_wireframe.png' alt='tablet wireframe'>
 </details>
 
 <details>
 <summary>Wireframes for desktop</summary>
-<img src='breadit/docs/wireframes/Desktop_wireframe.png' alt='desktop wireframe'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/wireframes/Desktop_wireframe.png' alt='desktop wireframe'>
 </details>
 
 ## Structure
@@ -88,7 +88,7 @@ Data Models are a central part of this project. There are three data models I us
 - Comment: This is another data model I created. I drew a lot of inspiration for this model from CodeInstitute's Django walkthrough project, which has a similar model.
 
 ### Data Model scheme
-<img src="breadit/docs/wireframes/database-schema.png" alt="database schema">
+<img src="https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/wireframes/database-schema.png" alt="database schema">
 
 This scheme was made with Lucidchart.
 
@@ -97,8 +97,12 @@ This scheme was made with Lucidchart.
 ### Navbar
 
 <details>
-<summary>Navbar</summary>
-<img src='' alt='Navbar screenshot'>
+<summary>Navbar when not logged in</summary>
+<img src='breadit/docs/features/navbar-loggedout.png' alt='Navbar screenshot'>
+</details>
+<details>
+<summary>Navbar when logged in (user has admin or staff privilege)</summary>
+<img src='breadit/docs/features/navbar-loggedin.png' alt='Navbar screenshot'>
 </details>
 
 User stories covered:
