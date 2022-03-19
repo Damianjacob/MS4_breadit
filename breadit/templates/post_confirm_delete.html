@@ -4,7 +4,7 @@
 
 <h1>This is the page for deleting a post</h1>
 
-<form class="m-2" action="" method="post" enctype="multipart/form-data">
+<form class="m-2 p-4 custom-posts border rounded" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <p>Are you sure you want to delete your post "{{ post.title }}"? All of its content and comments will be eliminated
     </p>

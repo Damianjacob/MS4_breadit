@@ -46,7 +46,7 @@ div, p, span{
     color: var(--blue);
 }
 
-/* Messages div */
+/* Messages div in base.html */
 #custom-message-div{
     display: none;
     top: 300px;

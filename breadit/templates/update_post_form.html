@@ -3,14 +3,14 @@
 {% block content %}
 
 <h1>This is the page for updating a post</h1>
-<form class="m-2" action="" method="post" enctype="multipart/form-data">
+<form class="m-2 p-4 custom-posts border rounded" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="form-group">
+    <div class="form-group mb-2">
         <label for="post_title">Title</label>
         <input type="text" class="form-control" id="post_title" placeholder="Title" value="{{ post.title }}"
             name="title">
     </div>
-    <div class="form-group">
+    <div class="form-group mb-2">
         <!-- content -->
         <div class="form-group">
             <label for="post_content">content</label>
@@ -19,8 +19,8 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="post_file">file input</label>
-        <input type="file" class="form-control-file" id="post_file" name="post_file">
+        <label for="post_file">You can choose a new image for your post, but if you don't the old image will stay.</label>
+        <input type="file" class="form-control-file" id="post_file" name="post_file" onchange="fileValidation()">
     </div>
     <button type="submit" class="btn btn-primary mb-2">Save</button>
 </form>
