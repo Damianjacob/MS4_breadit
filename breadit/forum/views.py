@@ -63,7 +63,8 @@ class PostDetailView(DetailView):
             'comment_form': CommentForm()
         })
 
-class PostLike(View):
+class PostLike(LoginRequiredMixin, View):
+    login_url = '/accounts/login/'
     
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -72,7 +73,6 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 # Class-based view for the creation of posts, limited to logged-in users
@@ -96,19 +96,23 @@ class CreatePostView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, 'Creation failed, the title field and content field cannot be empty')
         return super().form_invalid(form)
 
 
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
     login_url = '/accounts/login/'
-    # form_class = PostForm
     form_class = EditPostform
     model = Post
     template_name = 'update_post_form'
 
     def get(self, request, slug):
+        """
+        method for get requests. In this case it is used
+        only to check if the user and the author of the post 
+        are the same, and raises a 403 error otherwise. This is to avoid 
+        malicious url manipulation.
+        """
         post = get_object_or_404(Post, slug=slug)
         user = request.user
         if str(user.username) != str(post.author):
@@ -135,6 +139,23 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
     template_name = "post_confirm_delete.html"
     success_url = '/'
     success_message = "Your post has been deleted succesfully!"
+    
+    def get(self, request, slug):
+        """
+        method for get requests. In this case it is used
+        only to check if the user and the author of the post 
+        are the same, and raises a 403 error otherwise. This is to avoid 
+        malicious url manipulation.
+        """
+        post = get_object_or_404(Post, slug=slug)
+        user = request.user
+        if str(user.username) != str(post.author):
+            raise PermissionDenied
+        else:
+            return render(request, 'post_confirm_delete.html', {
+                'post': post,
+                'slug': slug
+            })
     
     def delete(self, request, slug):
         messages.success(self.request, self.success_message)

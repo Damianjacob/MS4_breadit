@@ -39,9 +39,8 @@ My own goals for this project are:
 11. As a registered user I want to leave comments under posts so that I can discuss topics with other users.
 13. As a registered user I want to be able to edit my posts so that I can correct mistakes easily if they happen.
 14. As a registered user I want to be able to remove my posts so that I can delete them if I don't like them anymore.
-15. As a registered user I want to be able to edit my own comments so that I can correct mistakes easily.
 ### Epic 4: Admin
-16. As a site admin I want to be able to access the admin page so that I can monitor posts and comments and remove them if they are inappropriate.
+15. As a site admin I want to be able to access the admin page so that I can monitor posts and comments and remove them if they are inappropriate.
 
 ## Design Choices
 My goal was to create a simple site with a clean look. I have opted for two warm primary colors, to create a welcoming atmosphere. The brown and gold colors should remind of the colors of bread (crust and inside).
@@ -109,6 +108,7 @@ For users that are logged out, it will display the option to sign up or log in, 
 </details>
 
 User stories covered:
+- 6. As a user I want to be able to get back to the home page in one click so that I can navigate the site easily.
 
 ### Home Page
 
@@ -118,6 +118,9 @@ User stories covered:
 </details>
 
 User stories covered:
+- 1. As a user I want to see all the breadit posts on the main page so that I can scroll through them.
+- 3. As a user I want to see likes, user and number of comments of a post without first having to click on it so that I can decide which posts are most relevant to me.
+- 8. As a registered user I want to be able to log out so that I have more security.
 
 ### User log in and sign up
 
@@ -132,6 +135,9 @@ User stories covered:
 </details>
 
 User stories covered:
+- 4. As a user I want to get redirected to the sign in/sign up page if I click on any links or buttons that require me to be logged in so that I can sign in or sign up easily.
+- 7. As a user I want to sign up and log in so that I can perform actions reserved for registered users.
+
 
 ### Post Detail page
 
@@ -141,6 +147,9 @@ User stories covered:
 </details>
 
 User stories covered:
+- 10. As a registered user I want to like posts so that I can express my preferences for certain posts.
+- 13. As a registered user I want to be able to edit my posts so that I can correct mistakes easily if they happen.
+- 14. As a registered user I want to be able to remove my posts so that I can delete them if I don't like them anymore.
 
 ### Leaving Comments
 
@@ -150,6 +159,7 @@ User stories covered:
 </details>
 
 User stories covered:
+- 11. As a registered user I want to leave comments under posts so that I can discuss topics with other users.
 
 ### Add Post
 
@@ -163,12 +173,14 @@ User stories covered:
 </details>
 
 User stories covered:
+- 9. As a registered user I want to be able to create posts so that I can share my recipes, tutorials or advice with other users.
+- 5. As a user I want to get feedback from the site on the actions I have performed so that I can see whether my action was carried out correctly or not.
 
 ### Edit and delete posts
 
 <details>
 <summary>Edit Post</summary>
-<img src='' alt='Edit Post screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/update-post.png' alt='Edit Post screenshot'>
 </details>
 <details>
 <summary>Delete Post</summary>
@@ -176,15 +188,18 @@ User stories covered:
 </details>
 
 User stories covered:
+- 14. As a registered user I want to be able to remove my posts so that I can delete them if I don't like them anymore.
+- 13. As a registered user I want to be able to edit my posts so that I can correct mistakes easily if they happen.
 
 ### Admin and staff access
 
 <details>
 <summary>Admin Panel</summary>
-<img src='' alt='admin panel screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/admin.png' alt='admin panel screenshot'>
 </details>
 
 User stories covered:
+- 15. As a site admin I want to be able to access the admin page so that I can monitor posts and comments and remove them if they are inappropriate.
 
 
 
