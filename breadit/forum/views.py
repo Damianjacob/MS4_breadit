@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, reverse, render
+from django.shortcuts import get_object_or_404, render
 from django.contrib import messages
 from django.views import View
 from django.views.generic import ListView
@@ -7,7 +7,7 @@ from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
+from .models import Post
 from .forms import PostForm, EditPostform, CommentForm
 from django.urls import reverse
 
