@@ -6,7 +6,8 @@
   <div class="custom-posts border rounded pt-1">
     <h2 class="text-center">{{post.title}}</h2>
     <div class="text-center"><i class="fa-solid fa-user"></i> {{ post.author }}</div>
-    <div class="text-center"><i class="fa-solid fa-calendar-day"></i> {{ post.created_on | date:'F d Y' }}</div>
+    <div class="text-center"><i class="fa-solid fa-calendar-day"></i> {{ post.created_on | date:'F d Y H:i' }}</div>
+    <div class="text-center"><i class="fa-solid fa-pen-to-square"></i> Latest edit: {{ post.modified_on | date:'F d Y H:i' }}</div>
     <hr>
     <div class="row p-5">
       {% if post.image %}
@@ -90,7 +91,7 @@
     <h5 class="card-title"><i class="fa-solid fa-user"></i> {{ comment.author }} </h5>
   </div>
   <h6 class="card-subtitle mb-2 text-muted px-2">
-    <i class="fa-solid fa-calendar-day"></i>{{ comment.created_on | date:'F d Y' }}
+    <i class="fa-solid fa-calendar-day"></i>{{ comment.created_on | date:'F d Y H:i' }}
   </h6>
   <p class="card-text px-2">{{comment.content}}</p>
 </div>

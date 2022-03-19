@@ -23,7 +23,7 @@
         <div class="row">
           {% if post.image %}
           <div class="col-4">
-            <img class="img-fluid mb-1 post-img" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
+            <img class="img-fluid mb-1 post-img img-thumbnail" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
           </div>
           <div class="col-8">
             {{ post.content|truncatechars:200 }}

@@ -1,3 +1,4 @@
+from turtle import width
 from django.shortcuts import get_object_or_404, reverse, render
 from django.contrib import messages
 from django.core.validators import FileExtensionValidator
@@ -27,7 +28,7 @@ class PostView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
-
+    
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('created_on')
@@ -39,7 +40,8 @@ class PostDetailView(DetailView):
             'post': post,
             'slug': slug,
             'comments': comments,
-            'comment_form': CommentForm()
+            'comment_form': CommentForm(),
+            'liked':liked,
         })
 
     def post(self, request, slug):
