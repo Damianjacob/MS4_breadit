@@ -114,7 +114,7 @@ User stories covered:
 
 <details>
 <summary>Home page</summary>
-<img src='' alt='home page screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/homepage.png' alt='home page screenshot'>
 </details>
 
 User stories covered:
@@ -123,12 +123,12 @@ User stories covered:
 
 <details>
 <summary>Log in</summary>
-<img src='' alt='log in screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/login.png' alt='log in screenshot'>
 </details>
 
 <details>
 <summary>Sign up</summary>
-<img src='' alt='sign up screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/signup.png' alt='sign up screenshot'>
 </details>
 
 User stories covered:
@@ -137,7 +137,7 @@ User stories covered:
 
 <details>
 <summary>Post detail</summary>
-<img src='' alt='post detail screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/post-detail1.png' alt='post detail screenshot'>
 </details>
 
 User stories covered:
@@ -146,7 +146,7 @@ User stories covered:
 
 <details>
 <summary>Comments</summary>
-<img src='' alt='comment screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/post-detail2.png' alt='comment screenshot'>
 </details>
 
 User stories covered:
@@ -155,7 +155,11 @@ User stories covered:
 
 <details>
 <summary>Add Post</summary>
-<img src='' alt='add post screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/createpost.png' alt='add post screenshot'>
+</details>
+<details>
+<summary>Add Post alert for wrong media file</summary>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/createpost-alert.png' alt='media file alert screenshot'>
 </details>
 
 User stories covered:
@@ -168,7 +172,7 @@ User stories covered:
 </details>
 <details>
 <summary>Delete Post</summary>
-<img src='' alt='delete Post screenshot'>
+<img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/post-delete.png' alt='delete Post screenshot'>
 </details>
 
 User stories covered:
