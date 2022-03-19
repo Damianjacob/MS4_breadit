@@ -1,12 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.template.defaultfilters import slugify
-from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 import uuid
 
 
 class Post(models.Model):
+    """
+    Class for the Post model.
+    """
     title = models.CharField(max_length=150)
     slug = models.SlugField(null=False, unique=True)
     content = models.TextField()
@@ -48,6 +51,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Class for the Comment model.
+    """
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,

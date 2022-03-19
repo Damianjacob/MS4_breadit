@@ -12,11 +12,10 @@ from .forms import PostForm, CommentForm
 from django.urls import reverse
 
 
-# Create your views here.
-
-
-# Class-based view for the index page (which contains the posts)
 class PostView(ListView):
+    """
+    Class-based view for the index page (which contains the posts)
+    """
     model = Post
     queryset = Post.objects.order_by('-created_on')
     post_list = queryset
@@ -24,6 +23,10 @@ class PostView(ListView):
 
 
 class PostDetailView(DetailView):
+    """
+    Class-based view for the Post detail view, which
+    contains comments and a comment form.
+    """
     model = Post
     template_name = 'post_detail.html'
 
@@ -69,6 +72,10 @@ class PostDetailView(DetailView):
 
 
 class PostLike(LoginRequiredMixin, View):
+    """
+    Class-based view for liking a comment.
+    Uses the same template as Post detail.
+    """
     login_url = '/accounts/login/'
 
     def post(self, request, slug):
@@ -81,8 +88,10 @@ class PostLike(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-# Class-based view for the creation of posts, limited to logged-in users
 class CreatePostView(LoginRequiredMixin, CreateView):
+    """
+    Class-based view for the creation of posts, limited to logged-in users
+    """
     login_url = '/accounts/login/'
     template_name = 'create_post_form.html'
     form_class = PostForm
@@ -109,6 +118,9 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
+    """
+    Class-based view for updating posts, limited to registered users
+    """
     login_url = '/accounts/login/'
     form_class = PostForm
     model = Post
@@ -146,6 +158,9 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
 
 
 class DeletePostView(LoginRequiredMixin, DeleteView):
+    """
+    Class-based view for deleting comments, limited to registered users
+    """
     login_url = '/accounts/login/'
     model = Post
     template_name = "post_confirm_delete.html"
