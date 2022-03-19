@@ -90,7 +90,48 @@ Data Models are a central part of this project. There are three data models I us
 ### Data Model scheme
 <img src="breadit/docs/wireframes/database-schema.png" alt="database schema">
 
+This scheme was made with Lucidchart.
+
 ## Features 
+
+### Navbar
+
+<details>
+<summary>Navbar</summary>
+<img src='' alt='Navbar screenshot'>
+</details>
+
+User stories covered:
+
+### Home Page
+
+User stories covered:
+
+### User log in and sign up
+
+User stories covered:
+
+### Post Detail page
+
+User stories covered:
+
+### Leaving Comments
+
+User stories covered:
+
+### Add Post
+
+User stories covered:
+
+### Edit and delete posts
+
+User stories covered:
+
+### Admin and staff access
+
+User stories covered:
+
+
 
 
 
