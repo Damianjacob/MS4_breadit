@@ -22,10 +22,11 @@ class PostView(ListView):
     post_list = queryset
     template_name = 'index.html'
 
+
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
-    
+
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.order_by('created_on')
@@ -38,7 +39,7 @@ class PostDetailView(DetailView):
             'slug': slug,
             'comments': comments,
             'comment_form': CommentForm(),
-            'liked':liked,
+            'liked': liked,
         })
 
     def post(self, request, slug):
@@ -52,7 +53,10 @@ class PostDetailView(DetailView):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            messages.success(self.request, 'Your comment has been created succesfully!')
+            messages.success(
+                self.request,
+                'Your comment has been created succesfully!'
+            )
         else:
             comment_form = CommentForm()
 
@@ -63,9 +67,10 @@ class PostDetailView(DetailView):
             'comment_form': CommentForm()
         })
 
+
 class PostLike(LoginRequiredMixin, View):
     login_url = '/accounts/login/'
-    
+
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
@@ -74,6 +79,7 @@ class PostLike(LoginRequiredMixin, View):
         else:
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 # Class-based view for the creation of posts, limited to logged-in users
 class CreatePostView(LoginRequiredMixin, CreateView):
@@ -92,12 +98,14 @@ class CreatePostView(LoginRequiredMixin, CreateView):
             form.instance.image = files['post_file']
 
         form.save()
-        messages.success(self.request, 'Your post has been created succesfully!')
+        messages.success(
+            self.request,
+            'Your post has been created succesfully!'
+        )
         return super().form_valid(form)
 
     def form_invalid(self, form):
         return super().form_invalid(form)
-
 
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
@@ -109,8 +117,8 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
     def get(self, request, slug):
         """
         method for get requests. In this case it is used
-        only to check if the user and the author of the post 
-        are the same, and raises a 403 error otherwise. This is to avoid 
+        only to check if the user and the author of the post
+        are the same, and raises a 403 error otherwise. This is to avoid
         malicious url manipulation.
         """
         post = get_object_or_404(Post, slug=slug)
@@ -130,8 +138,12 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
         if 'post_file' in files:
             form.instance.image = files['post_file']
         form.save()
-        messages.success(self.request, 'Your post has been updated succesfully!')
+        messages.success(
+            self.request,
+            'Your post has been updated succesfully!'
+        )
         return super().form_valid(form)
+
 
 class DeletePostView(LoginRequiredMixin, DeleteView):
     login_url = '/accounts/login/'
@@ -139,12 +151,12 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
     template_name = "post_confirm_delete.html"
     success_url = '/'
     success_message = "Your post has been deleted succesfully!"
-    
+
     def get(self, request, slug):
         """
         method for get requests. In this case it is used
-        only to check if the user and the author of the post 
-        are the same, and raises a 403 error otherwise. This is to avoid 
+        only to check if the user and the author of the post
+        are the same, and raises a 403 error otherwise. This is to avoid
         malicious url manipulation.
         """
         post = get_object_or_404(Post, slug=slug)
@@ -156,9 +168,7 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
                 'post': post,
                 'slug': slug
             })
-    
+
     def delete(self, request, slug):
         messages.success(self.request, self.success_message)
         return super(DeletePostView, self).delete(request, slug)
-
-
