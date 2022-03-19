@@ -1,7 +1,5 @@
 from django.shortcuts import get_object_or_404, reverse, render
 from django.contrib import messages
-from django.core.validators import FileExtensionValidator
-from django.contrib.auth.models import User
 from django.views import View
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView

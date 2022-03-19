@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, render
-from django.contrib.auth.models import User
 # Create your views here.
 
 
