@@ -53,6 +53,7 @@ class PostDetailView(DetailView):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(self.request, 'Your comment has been created succesfully!')
         else:
             comment_form = CommentForm()
 
@@ -96,6 +97,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
+        messages.error(self.request, 'Creation failed, the title field and content field cannot be empty')
         return super().form_invalid(form)
 
 

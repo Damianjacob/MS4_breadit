@@ -8,13 +8,13 @@
     <div class="form-group mb-2">
         <label for="post_title">Title</label>
         <input type="text" class="form-control" id="post_title" placeholder="Title" value="{{ post.title }}"
-            name="title">
+            name="title" required>
     </div>
     <div class="form-group mb-2">
         <!-- content -->
         <div class="form-group">
             <label for="post_content">content</label>
-            <textarea class="form-control" id="post_content" rows="3" name="content">{{ post.content }}</textarea>
+            <textarea class="form-control" id="post_content" rows="3" name="content" required>{{ post.content }}</textarea>
         </div>
         </select>
     </div>
