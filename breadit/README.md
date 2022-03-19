@@ -67,6 +67,28 @@ I used balsamiq for the wireframes. The final wireframe is a bit different from 
 </details>
 
 ## Structure
+### Code directories
+Breadit was created with the Django framework, so it is divided into apps:
+- breadit is the main app, where settings.py can be found
+- The other two apps are accounts and forum. Forum is the core part of the app.
+
+Other directories:
+- static: This is where the custom CSS and JavaScript files for this project are stored.
+- templates: This is where all the templates (html files) are stored, as is usual with Django.
+- docs: in this directory I stored all the images and screenshots needed for this Readme file.
+
+### Database
+This website relies heavily on a databse. I used postgreSQL as database both for development and for the deployed version.
+
+### Data Models
+Data Models are a central part of this project. There are three data models I used:
+
+- User: This is a built-in data model that comes with Django. It is used for authentication and authorisation.
+- Post: This is my own data model, used for all the posts you see on my site.
+- Comment: This is another data model I created. I drew a lot of inspiration for this model from CodeInstitute's Django walkthrough project, which has a similar model.
+
+### Data Model scheme
+<img src="breadit/docs/wireframes/database-schema.png" alt="database schema">
 
 ## Features 
 
