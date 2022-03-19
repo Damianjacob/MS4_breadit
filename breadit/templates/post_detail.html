@@ -14,11 +14,11 @@
         <img class="img-fluid mb-1" src="{{ post.image.url }}" alt="Image of {{ post.title }}">
       </div>
       <div class="col-md-8 text-center">
-        {{ post.content }}
+        {{ post.content | linebreaks }}
       </div>
       {% else %}
       <div>
-        {{ post.content }}
+        {{ post.content | linebreaks }}
       </div>
       {% endif %}
     </div>
