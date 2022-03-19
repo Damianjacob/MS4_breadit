@@ -53,17 +53,17 @@ My goal was to create a simple site with a clean look. I have opted for two warm
 I used balsamiq for the wireframes. The final wireframe is a bit different from the first version, as i made some changes while creating the project, in accordance with Agile principles.
 <details>
 <summary>Wireframes for mobile</summary>
-<img src='docs/wireframes/Mobile_wireframe.png' alt='mobile wireframe'>
+<img src='breadit/docs/wireframes/Mobile_wireframe.png' alt='mobile wireframe'>
 </details>
 
 <details>
 <summary>Wireframes for tablet</summary>
-<img src='docs/wireframes/Tablet_wireframe.png' alt='tablet wireframe'>
+<img src='breadit/docs/wireframes/Tablet_wireframe.png' alt='tablet wireframe'>
 </details>
 
 <details>
 <summary>Wireframes for desktop</summary>
-<img src='docs/wireframes/Desktop_wireframe.png' alt='desktop wireframe'>
+<img src='breadit/docs/wireframes/Desktop_wireframe.png' alt='desktop wireframe'>
 </details>
 
 ## Structure
