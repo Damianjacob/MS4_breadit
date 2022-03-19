@@ -1,5 +1,14 @@
 function fileValidation() {
+    /*
+    Checks if the file the user wants to upload is 
+    one of the allowed file extensions, if it 
+    isn't, sets the value of the file input
+    back to an empty string and alerts the user.
+    */
     let fileInput = document.getElementById('post_file');
+    let messageDiv = document.getElementById('custom-message-div')
+    let messageP = document.getElementById('custom-message-p')
+
 
     console.log(fileInput.value);
 
@@ -13,18 +22,18 @@ function fileValidation() {
             console.log(`${filePath} contains ${allowedExtensions[extension]}, so x is now at ${x}`)
             console.log(`the value of index ${extension} is ${allowedExtensions[extension]}`)
         }
-        else {};
+        else { };
         console.log(`${filePath} does not contain ${allowedExtensions[extension]}, so x is now at ${x}`)
     }
     if (x < 1) {
-        alert(
-            'Your file does not have the correct format. Allowed formats: jpg, jpeg, png.'
-        );
+        messageDiv.style.display = 'block';
+        messageP.textContent =
+            'This file type is not allowed. Allowed formats: jpg, jpeg, png.'
         fileInput.value = '';
     }
-    
 };
 
-console.log("Javascript is working");
-
-
+let message = document.getElementById('custom-message-div')
+message.addEventListener("click", function(){
+    message.style.display = 'none'
+})

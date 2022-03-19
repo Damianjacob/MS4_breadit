@@ -4,14 +4,22 @@
     --blue: #7F95D1;
 }
 
-/* main{
-    min-height: 100vh;
-} */
+/* fonts */
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar{
+    font-family: 'Open Sans', sans-serif;
+}
+
+div, p, span{
+    font-family:'Roboto', sans-serif;
+}
 
 .post-min-height{
     min-height: 80%;
 }
-
 
 /* Custom color classes */
 .bg-custom-brown{
@@ -36,4 +44,14 @@
 
 .blue-custom-color{
     color: var(--blue);
+}
+
+/* Messages div */
+#custom-message-div{
+    display: none;
+    top: 300px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
 }

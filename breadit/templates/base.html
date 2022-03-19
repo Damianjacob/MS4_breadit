@@ -16,6 +16,13 @@
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!--Google Font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'breadit/style.css' %}">
 
@@ -49,20 +56,20 @@
               <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
             </ul>
             {% if user.is_superuser or user.is_staff %}
-            <li class="nav-item">
-              <a href="admin/" class="nav-link">Admin Panel</a>
-            </li>
-            {% endif %}
+          <li class="nav-item">
+            <a href="admin/" class="nav-link">Admin Panel</a>
+          </li>
+          {% endif %}
           </li>
           {% else %}
 
           <li class="nav-item dropdown">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Log In</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+          </li>
           </li>
           {% endif %}
 
@@ -73,7 +80,7 @@
 
   <!-- Django messages -->
   {% if messages %}
-  <ul class="messages">
+  <ul class="messages text-decoration-none text-center">
     {% for message in messages %}
     <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
       {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
@@ -83,6 +90,11 @@
   </ul>
   {% endif %}
 
+  <!-- Custom messages -->
+  <div id="custom-message-div" class="text-center">
+    <h3>Alert</h3>
+    <p id="custom-message-p"></p>
+  </div>
   <main>
     {% block content %}
     {% endblock content %}
@@ -93,7 +105,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <!-- Custom JavaScript -->
-    <script src="{% static 'breadit/breadit.js' %}"></script>
+  <script src="{% static 'breadit/breadit.js' %}"></script>
 </body>
 
 </html>
