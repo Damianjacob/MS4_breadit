@@ -13,8 +13,7 @@ class Post(models.Model):
     slug = models.SlugField(null=False, unique=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    image = CloudinaryField('image', blank=True, null=True,
-    validators=[FileExtensionValidator(['jpeg', 'png', 'webp'])])
+    image = CloudinaryField('image', blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
@@ -44,7 +43,7 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            title_and_uuid = self.slug + ' ' + str(self.uuid)
+            title_and_uuid = self.title + ' ' + str(self.uuid)
             self.slug = slugify(title_and_uuid)
         return super().save(*args, **kwargs)
 
