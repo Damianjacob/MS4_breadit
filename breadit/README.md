@@ -96,6 +96,9 @@ This scheme was made with Lucidchart.
 
 ### Navbar
 
+The navbar is sticky and thus offers a quick and easy way to return to the Homepage, wherever the user is in the page.
+For users that are logged out, it will display the option to sign up or log in, and for users who are already logged in it will display their username (so they know that they are logged in) and if they are a superuser or staff member they will see a link to the admin panel.
+
 <details>
 <summary>Navbar when not logged in</summary>
 <img src='breadit/docs/features/navbar-loggedout.png' alt='Navbar screenshot'>
@@ -109,29 +112,73 @@ User stories covered:
 
 ### Home Page
 
+<details>
+<summary>Home page</summary>
+<img src='' alt='home page screenshot'>
+</details>
+
 User stories covered:
 
 ### User log in and sign up
+
+<details>
+<summary>Log in</summary>
+<img src='' alt='log in screenshot'>
+</details>
+
+<details>
+<summary>Sign up</summary>
+<img src='' alt='sign up screenshot'>
+</details>
 
 User stories covered:
 
 ### Post Detail page
 
+<details>
+<summary>Post detail</summary>
+<img src='' alt='post detail screenshot'>
+</details>
+
 User stories covered:
 
 ### Leaving Comments
+
+<details>
+<summary>Comments</summary>
+<img src='' alt='comment screenshot'>
+</details>
 
 User stories covered:
 
 ### Add Post
 
+<details>
+<summary>Add Post</summary>
+<img src='' alt='add post screenshot'>
+</details>
+
 User stories covered:
 
 ### Edit and delete posts
 
+<details>
+<summary>Edit Post</summary>
+<img src='' alt='Edit Post screenshot'>
+</details>
+<details>
+<summary>Delete Post</summary>
+<img src='' alt='delete Post screenshot'>
+</details>
+
 User stories covered:
 
 ### Admin and staff access
+
+<details>
+<summary>Admin Panel</summary>
+<img src='' alt='admin panel screenshot'>
+</details>
 
 User stories covered:
 
