@@ -204,22 +204,31 @@ Users that have superuser or staff privileges can access the admin panel from th
 User stories covered:
 - 15. As a site admin I want to be able to access the admin page so that I can monitor posts and comments and remove them if they are inappropriate.
 
-
-
-
-
-
-### Existing features
-<!-- Work in progress -->
-<!-- optional: features left to implement -->
+### Features still to implement
+- A user profile where users can edit their information\
+- A search bar to search for posts or comments
+- A chat for users
 
 ## Technologies used
+The primary technology used here was the Django framework
+### Languages
+- HTML5 for building the web pages
+- CSS3 for styling the web pages (although I used mainly Bootstrap 5)
+- JavaScript for validating the media input field 
+- Python 3 for the backend programming and database manipulation
 
-Hosting: Heroku
-Version Control: Git, GitHub
-Languages: Python
-For hosting media files: Cloudinary
-Database: PostgreSQL
+### Other technologies
+Apart from the programming languages, I have used the following:
+
+- [Heroku](https://www.heroku.com/) for deploying and hosting my site.
+- [Git](https://git-scm.com/) and [GitHub](https://github.com/) for version control and storage of my code 
+- [Cloudinary](https://cloudinary.com/) for hosting the image files
+- [postgreSQL](https://www.postgresql.org/) as a database
+- Balsamiq Wireframes for creating my wireframes
+- Lucidchart for creating the data schema for my models
+- Font Awesome - All icons are from Font Awesome
+- Google Fonts - I used the Roboto and Open Sans fonts from Google Fonts
+
 
 ## Testing
 
