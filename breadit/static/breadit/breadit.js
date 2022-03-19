@@ -6,35 +6,31 @@ function fileValidation() {
     back to an empty string and alerts the user.
     */
     let fileInput = document.getElementById('post_file');
-    let messageDiv = document.getElementById('custom-message-div')
-    let messageP = document.getElementById('custom-message-p')
-
+    let messageDiv = document.getElementById('custom-message-div');
+    let messageP = document.getElementById('custom-message-p');
 
     console.log(fileInput.value);
 
     let filePath = fileInput.value;
     let allowedExtensions = ['.jpg', '.jpeg', '.png'];
-    x = 0
-    for (extension in allowedExtensions) {
+    x = 0;
+    for (let extension in allowedExtensions) {
 
         if (filePath.includes(allowedExtensions[extension])) {
             x++;
-            console.log(`${filePath} contains ${allowedExtensions[extension]}, so x is now at ${x}`)
-            console.log(`the value of index ${extension} is ${allowedExtensions[extension]}`)
         }
-        else { };
-        console.log(`${filePath} does not contain ${allowedExtensions[extension]}, so x is now at ${x}`)
+        else { }
     }
     if (x < 1) {
         messageDiv.style.display = 'block';
         messageP.textContent =
-            'This file type is not allowed. Allowed formats: jpg, jpeg, png.'
+            'This file type is not allowed. Allowed formats: jpg, jpeg, png.';
         fileInput.value = '';
     }
-};
+}
 
 // Makes the custom message div disappear by clicking on it
-let message = document.getElementById('custom-message-div')
+let message = document.getElementById('custom-message-div');
 message.addEventListener("click", function () {
-    message.style.display = 'none'
-})
+    message.style.display = 'none';
+});

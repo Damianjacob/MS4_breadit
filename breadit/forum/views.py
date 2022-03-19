@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import PostForm, EditPostform, CommentForm
+from .forms import PostForm, CommentForm
 from django.urls import reverse
 
 
@@ -102,7 +102,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
 class UpdatePostView(LoginRequiredMixin, UpdateView):
     login_url = '/accounts/login/'
-    form_class = EditPostform
+    form_class = PostForm
     model = Post
     template_name = 'update_post_form'
 

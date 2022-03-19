@@ -8,12 +8,6 @@ class PostForm(ModelForm):
         fields = ['title', 'content', 'image']
 
 
-class EditPostform(ModelForm):
-    class Meta:
-        model = Post
-        fields = ['title', 'content', 'image']
-
-
 class CommentForm(ModelForm):
     class Meta:
         model = Comment

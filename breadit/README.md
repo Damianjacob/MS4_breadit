@@ -233,9 +233,8 @@ Apart from the programming languages, I have used the following:
 ## Testing
 
 ### HTML
-No errors were returned when passing through the official W3C validator
-
-<!-- ![html-validator](https://github.com/Damianjacob/CI_MS1_Music_Pro/blob/master/assets/images/readme-images/htmlchecker-about-us.png)   -->
+No errors were returned when passing through the official [W3C validator](https://validator.w3.org/).
+Please see the screenshots for HTML here: [HTML validation]() .
 
 ### CSS
 No errors were found when passing through the official (Jigsaw) validator

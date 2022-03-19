@@ -1,18 +1,20 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.core.validators import FileExtensionValidator
 from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
 import uuid
 
-# Create your models here.
 
 class Post(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(null=False, unique=True)
     content = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='posts'
+        )
     image = CloudinaryField('image', blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
@@ -24,18 +26,15 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-    
+
     def number_of_comments(self):
         return self.comments.count()
-    
+
     class Meta:
         ordering = ['-created_on']
 
     # The following two methods have been copied and adapted from this article:
     # https://learndjango.com/tutorials/django-slug-tutorial
-    # Consider using following method if time allows
-    # https://docs.djangoproject.com/en/dev/ref/forms/validation/#validating-fields-with-clean
-
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={
                 'slug': self.slug
@@ -47,8 +46,13 @@ class Post(models.Model):
             self.slug = slugify(title_and_uuid)
         return super().save(*args, **kwargs)
 
+
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
     author = models.CharField(max_length=80)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
