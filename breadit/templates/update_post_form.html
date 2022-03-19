@@ -23,5 +23,6 @@
         <input type="file" class="form-control-file" id="post_file" name="post_file" onchange="fileValidation()">
     </div>
     <button type="submit" class="btn btn-primary mb-2">Save</button>
+    <a href="{% url 'post_detail' post.slug %}">Cancel</a>
 </form>
 {% endblock %}

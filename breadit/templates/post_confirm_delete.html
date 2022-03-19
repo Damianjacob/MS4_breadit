@@ -9,6 +9,7 @@
     <p>Are you sure you want to delete your post "{{ post.title }}"? All of its content and comments will be eliminated
     </p>
     <button type="submit" class="btn btn-primary mb-2">Confirm</button>
+    <a href="{% url 'post_detail' post.slug %}">Cancel</a>
 </form>
 
 {% endblock %}
