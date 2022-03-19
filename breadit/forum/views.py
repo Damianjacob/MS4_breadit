@@ -1,4 +1,3 @@
-from turtle import width
 from django.shortcuts import get_object_or_404, reverse, render
 from django.contrib import messages
 from django.core.validators import FileExtensionValidator
