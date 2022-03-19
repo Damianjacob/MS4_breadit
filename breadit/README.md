@@ -112,6 +112,9 @@ User stories covered:
 
 ### Home Page
 
+The home page is the central part of Breadit: this is where all the posts are displayed (the latest posts are displayed on top) and where the user can see more information about them.
+From here the user can scroll through the posts and click on the ones they like. Information about the posts is visible from the home page, like the user who created the post, publication date, number of likes and number of comments.
+The user can also decide to add their own post to the site, but they need to be logged in to do that.
 <details>
 <summary>Home page</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/homepage.png' alt='home page screenshot'>
@@ -123,7 +126,7 @@ User stories covered:
 - 8. As a registered user I want to be able to log out so that I have more security.
 
 ### User log in and sign up
-
+These are the forms used to sign the user up or log them in. If an anonymous user tries to access a forbidden view, they will be redirected to the login page.
 <details>
 <summary>Log in</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/login.png' alt='log in screenshot'>
@@ -140,7 +143,7 @@ User stories covered:
 
 
 ### Post Detail page
-
+This is where the users can see more details about a post. The full lenght of the post text can be seen here, and the comments and likes as well. The user can also like a post if they are signed in.
 <details>
 <summary>Post detail</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/post-detail1.png' alt='post detail screenshot'>
@@ -152,7 +155,7 @@ User stories covered:
 - 14. As a registered user I want to be able to remove my posts so that I can delete them if I don't like them anymore.
 
 ### Leaving Comments
-
+This is where registered users can leave a comment.
 <details>
 <summary>Comments</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/post-detail2.png' alt='comment screenshot'>
@@ -162,7 +165,7 @@ User stories covered:
 - 11. As a registered user I want to leave comments under posts so that I can discuss topics with other users.
 
 ### Add Post
-
+This is where registered users can create their own post. They can add an image but don't have to, but it's mandatory to fill both the title and the content fields.
 <details>
 <summary>Add Post</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/createpost.png' alt='add post screenshot'>
@@ -177,7 +180,7 @@ User stories covered:
 - 5. As a user I want to get feedback from the site on the actions I have performed so that I can see whether my action was carried out correctly or not.
 
 ### Edit and delete posts
-
+Registered users can also delete or edit their own posts. An attempt to modify or delete the post of a different user through url modification will raise a 403 error.
 <details>
 <summary>Edit Post</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/update-post.png' alt='Edit Post screenshot'>
@@ -192,7 +195,7 @@ User stories covered:
 - 13. As a registered user I want to be able to edit my posts so that I can correct mistakes easily if they happen.
 
 ### Admin and staff access
-
+Users that have superuser or staff privileges can access the admin panel from their navbar. From there, they can delete users, posts and comments if necessary.
 <details>
 <summary>Admin Panel</summary>
 <img src='https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/admin.png' alt='admin panel screenshot'>
