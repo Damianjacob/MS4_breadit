@@ -17,8 +17,6 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from django.urls import reverse
-
 
 if os.path.isfile("env.py"):
     import env
@@ -35,7 +33,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['breadit-app.herokuapp.com', 'localhost']
 
