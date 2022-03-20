@@ -237,8 +237,8 @@ No errors were returned when passing through the official [W3C validator](https:
 Please see the screenshots for HTML here: [HTML validation]() .
 
 ### CSS
-No errors were found when passing through the official (Jigsaw) validator
-<!-- ![css-validator](https://github.com/Damianjacob/CI_MS1_Music_Pro/blob/master/assets/images/readme-images/cssvalidator-about-us.png)   -->
+No errors were found when passing through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
+
 
 ### ACCESSIBILITY
 <!-- There is one error because of an empty form label on index.html, however i need that label to stay empty for my responsive nav bar to show correctly as a hamburger menu.  The same goes for the instruments.html page in the buy modal: there are empty labels because i used icons from font awesome for those labels. -->

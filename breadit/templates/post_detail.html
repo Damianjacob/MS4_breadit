@@ -47,13 +47,13 @@
       <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
         {% csrf_token %}
         {% if liked %}
-        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-link">
+        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-link" aria-label="Like">
           <i class="fa-solid fa-bread-slice fa-lg brown-custom-color"></i></button>
         {{ post.number_of_likes}}
         <i class="fa-solid fa-comment"></i>
         {{ comments|length }}
         {% else %}
-        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-link">
+        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-link" aria-label="Unlike">
           <i class="fa-solid fa-bread-slice gold-custom-color"></i></button>
         {{ post.number_of_likes}}
         <i class="fa-solid fa-comment"></i>
