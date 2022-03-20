@@ -319,6 +319,16 @@ Fix: "for" loops in JavaScript return the index of an array element, not its val
 - Login template not found.
 Fix: Moved login.html template into the "registration" folder, as prescribed by django.
 
+- Server Error (500) with DEBUG=False
+This has been a consistent error on both my local development environment and on Heroku.
+some of the troubleshootings have included:
+- running "collectstatic" on Heroku
+- Hosting static files on cloudinary
+- Installing whitenoise
+- Downloading all django files into staticfiles directory, as suggestion from Tutor
+
+None of this has worked. I have tried to troubleshoot with a Tutor who gave me some very helpful tips, but while the solution worked on Gitpod it did not work for me. I still got a Server error both locally and on Heroku. I feel really out of my depth with this error and I feel like I have tried everything. I have taken the decision to submit my project with DEBUG=True, knowing that this should never happen, but I wanted to show a functioning site.
+
 ## Deployment
 
 ### Creating the Github repository and cloning it
