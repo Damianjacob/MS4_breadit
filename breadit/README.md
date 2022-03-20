@@ -96,7 +96,7 @@ My own goals for this project are:
 My goal was to create a simple site with a clean look. I have opted for two warm primary colors, to create a welcoming atmosphere. The brown and gold colors should remind of the colors of bread (crust and inside).
 
 ### Color palette
-![html-validator](https://github.com/Damianjacob/MS4_breadit/blob/main/docs/features/color-palette.png)
+![html-validator](https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/features/color-palette.png)
 
 ### Wireframes
 I used balsamiq for the wireframes. The final wireframe is a bit different from the first version, as i made some changes while creating the project, in accordance with Agile principles.
