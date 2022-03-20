@@ -62,9 +62,9 @@
       </form>
       {% else %}
       <!-- Likes and comment icons for anonymous users -->
-      <i class="fa-solid fa-bread-slice"></i>
+      <i class="fa-solid fa-bread-slice brown-custom-color"></i>
       {{ post.number_of_likes}}
-      <i class="fa-solid fa-comment"></i>
+      <i class="fa-solid fa-comment blue-custom-color"></i>
       {{ comments|length }}
     </span>
     {% endif %}
@@ -87,7 +87,7 @@
 <!-- Comments section -->
 {% for comment in comments %}
 <div class="card m-5 shadow pb-1">
-  <div class="card-body">
+  <div class="card-body blue-custom-color">
     <h5 class="card-title"><i class="fa-solid fa-user"></i> {{ comment.author }} </h5>
   </div>
   <h6 class="card-subtitle mb-2 text-muted px-2">
