@@ -228,7 +228,7 @@ Apart from the programming languages, I have used the following:
 - [Lucidchart](https://www.lucidchart.com/pages/de) for creating the data schema for my models
 - [Font Awesome](https://fontawesome.com/) - All icons are from Font Awesome
 - [Google Fonts](https://fonts.google.com/) - I used the Roboto and Open Sans fonts from Google Fonts
-
+- [VSCode](https://code.visualstudio.com/) - The code editor where I wrote all my code.
 
 ## Testing
 
@@ -248,25 +248,46 @@ All my Python documents passed through the PEP8 validator without any errors. Th
 My JavaScript file passed through the JSHint validation without any errors.
 <img src="https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/validation/javascript-validation/javascript-validation.png">
 
-
-### ACCESSIBILITY
-
-
 ### LIGHTHOUSE
 All of the pages in this site have achieved a total score of at least 89 in Google Lighthouse (for performance, accessibility, SEO and best practices.)
-You can see the results [here]().
-
-<!-- ![lighthouse](https://github.com/Damianjacob/CI_MS1_Music_Pro/blob/master/assets/images/readme-images/index.html-performance.png)   -->
-
-### Fixed errors
-
+You can see the results [here](https://github.com/Damianjacob/MS4_breadit/tree/main/breadit/docs/validation/performance).
 
 ## Bugs
 
+- "ModuleNotFoundError: _tkinter" while trying to load the page in Heroku.
+Fix: One of the Python files had automatically imported a module called "turtle" which contains tkinter. Deleted turtle import.
+
+- Duplicate Keys: duplicate slugs for some new posts.
+Fix: used the "uuid" python module and the post title for slugs.
+
+- Media file validation accepts any file extension or accepts no file extension (breadit.js)
+Fix: "for" loops in JavaScript return the index of an array element, not its value. Adapted the function accordingly.
+
+- Login template not found.
+Fix: Moved login.html template into the "registration" folder, as prescribed by django.
+
 ## Deployment
 
-The site was deployed to Heroku by connecting it go my GitHub repository and enabling automatic deploys.
-The steps I followed to deploy the site on Heroku can be found here: https://devcenter.heroku.com/articles/getting-started-with-python#set-up.
+### Creating the Github repository and cloning it
+- Go to Github to your profile
+- Go to repositories and click on "New"
+- Choose a name and the settings you prefer, then click on "create repository"
+- Go to the repository
+- Click on "code", and copy the HTTPS address
+- In VSCode, click on "Clone Git repository"
+- Paste the address of your repository and press enter. 
+
+### Deploying to Heroku
+- Create account at Heroku
+- Create new app, give it a name and select your region
+- Go to Settings
+- Under Config Vars add your secret data (for example environment variables like API keys)
+- Add Heroku Postgres Add-on
+- In the deployment tab, select the preferred deployment method (I chose Github)
+- Connect your app to your GitHub repository
+- Enable automatic deploys
+- For any issues it's useful to consult the build log in the activity tab
+- Before going public, it's very important to set DEBUG to false in the django settings.py file.
 
 
 ## Credits
@@ -282,7 +303,4 @@ During the researches I did, I found a lot of very helpful material. Some of the
 
 I have used the [Django Tutorial](https://docs.djangoproject.com/en/4.0/intro/tutorial01/) and read the Django documentation extensively during the creation of this project.
 
-### Content
-
-### Media
 
