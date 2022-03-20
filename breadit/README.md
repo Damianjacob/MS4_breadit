@@ -234,17 +234,27 @@ Apart from the programming languages, I have used the following:
 
 ### HTML
 No errors were returned when passing through the official [W3C validator](https://validator.w3.org/).
-Please see the screenshots for HTML here: [HTML validation]() .
+Please see the screenshots for HTML here: [HTML validation](https://github.com/Damianjacob/MS4_breadit/tree/main/breadit/docs/validation/html-validation) .
 
 ### CSS
-No errors were found when passing through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
+No errors were found when passing through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/).
+<img src="https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/validation/css-validation/css-validation.png">
+
+### Python
+All my Python documents passed through the PEP8 validator without any errors. The result was the following for all of them.
+<img src="https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/validation/css-validation/css-validation.png">
+
+### JavaScript
+My JavaScript file passed through the JSHint validation without any errors.
+<img src="https://github.com/Damianjacob/MS4_breadit/blob/main/breadit/docs/validation/javascript-validation/javascript-validation.png">
 
 
 ### ACCESSIBILITY
-<!-- There is one error because of an empty form label on index.html, however i need that label to stay empty for my responsive nav bar to show correctly as a hamburger menu.  The same goes for the instruments.html page in the buy modal: there are empty labels because i used icons from font awesome for those labels. -->
+
 
 ### LIGHTHOUSE
-All of the pages in this site have achieved a score over 90 in performance, accessibility, best practices and SEO.
+All of the pages in this site have achieved a total score of at least 89 in Google Lighthouse (for performance, accessibility, SEO and best practices.)
+You can see the results [here]().
 
 <!-- ![lighthouse](https://github.com/Damianjacob/CI_MS1_Music_Pro/blob/master/assets/images/readme-images/index.html-performance.png)   -->
 
@@ -260,17 +270,17 @@ The steps I followed to deploy the site on Heroku can be found here: https://dev
 
 
 ## Credits
+I would like to thank my Mentor Mo Shami for his guidance and the team of Tutors of Code Institute for nudging me in the right direction when I was panicking because my code for uploading an image was not working as intended. I would also like to thank the people who created the teaching material at Code Institute, I often referred back to it while making this project and it helped me a lot.
 
 ### Tutorials and other resources
+During the researches I did, I found a lot of very helpful material. Some of the resources I used are the following:
 
-Slugs in django: https://learndjango.com/tutorials/django-slug-tutorial
-post.user and user.username not being equal: https://stackoverflow.com/questions/60955686/the-if-equal-not-working-in-django-template
+- Slugs in django: https://learndjango.com/tutorials/django-slug-tutorial
+- The answer to why "post.user" and "user.username" did not result as equal in my templates: https://stackoverflow.com/questions/60955686/the-if-equal-not-working-in-django-template
+- How to display a message for DeleteView: https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+- Tutorial for adding a sign up view: https://learndjango.com/tutorials/django-signup-tutorial
 
-How to display a message for DeleteView: https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
-
-Tutorial for adding a sign up view: https://learndjango.com/tutorials/django-signup-tutorial
-
-I have used the Django Tutorial and Django documentation extensively during the creation of this project.
+I have used the [Django Tutorial](https://docs.djangoproject.com/en/4.0/intro/tutorial01/) and read the Django documentation extensively during the creation of this project.
 
 ### Content
 
