@@ -1,6 +1,56 @@
 # MS4_breadit
 
+## Table of Contents
+- [MS4_breadit](#ms4-breadit)
+  * [A forum for bakers and bread enthusiasts](#a-forum-for-bakers-and-bread-enthusiasts)
+  * [Project Goals](#project-goals)
+  * [User Goals](#user-goals)
+  * [Site Owner Goals](#site-owner-goals)
+  * [User Stories](#user-stories)
+    + [Epic 1: Basic functions](#epic-1--basic-functions)
+    + [Epic 2: Easy to use](#epic-2--easy-to-use)
+    + [Epic 3: Authentication and permission](#epic-3--authentication-and-permission)
+    + [Epic 4: Admin](#epic-4--admin)
+  * [Design Choices](#design-choices)
+    + [Color palette](#color-palette)
+    + [Wireframes](#wireframes)
+  * [Structure](#structure)
+    + [Code directories](#code-directories)
+    + [Database](#database)
+    + [Data Models](#data-models)
+    + [Data Model scheme](#data-model-scheme)
+  * [Features](#features)
+    + [Navbar](#navbar)
+    + [Home Page](#home-page)
+    + [User log in and sign up](#user-log-in-and-sign-up)
+    + [Post Detail page](#post-detail-page)
+    + [Leaving Comments](#leaving-comments)
+    + [Add Post](#add-post)
+    + [Edit and delete posts](#edit-and-delete-posts)
+    + [Admin and staff access](#admin-and-staff-access)
+    + [Features still to implement](#features-still-to-implement)
+  * [Technologies used](#technologies-used)
+    + [Languages](#languages)
+    + [Other technologies](#other-technologies)
+  * [Testing](#testing)
+    + [HTML](#html)
+    + [CSS](#css)
+    + [Python](#python)
+    + [JavaScript](#javascript)
+    + [LIGHTHOUSE](#lighthouse)
+    + [Devices](#devices)
+  * [Bugs](#bugs)
+  * [Deployment](#deployment)
+    + [Creating the Github repository and cloning it](#creating-the-github-repository-and-cloning-it)
+    + [Deploying to Heroku](#deploying-to-heroku)
+  * [Credits](#credits)
+    + [Tutorials and other resources](#tutorials-and-other-resources)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## A forum for bakers and bread enthusiasts
+
 
 ## Project Goals
 The goals for this project are:
@@ -251,6 +301,9 @@ My JavaScript file passed through the JSHint validation without any errors.
 ### LIGHTHOUSE
 All of the pages in this site have achieved a total score of at least 89 in Google Lighthouse (for performance, accessibility, SEO and best practices.)
 You can see the results [here](https://github.com/Damianjacob/MS4_breadit/tree/main/breadit/docs/validation/performance).
+
+### Devices
+The testing was done on a Mac Mini and iPhone. I tested Google Chrome and Safari, and the site was functional and responsive for all devices (I used the list of devices available in the web inspector).
 
 ## Bugs
 
